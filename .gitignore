@@ -1,0 +1,54 @@
+# Python environments
+.venv/
+.venv-1/
+.venv313/
+venv/
+__pycache__/
+*.py[cod]
+
+# Backups
+rr_backup_before_copilot/
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials
+secrets/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
+.ipynb_checkpoints/
+
+# Raw competition datasets and materials
+data/
+
+# Jupyter notebooks (review before publishing)
+*.ipynb
+
+# Derived delivery-level dataset
+outputs/pressure/delivery_pressure_eligibility.csv
+
+# Derived player-level and analytical outputs
+outputs/audit/
+audit_outputs/
+outputs/pressure/
+outputs/descriptive/*.csv
+outputs/descriptive/*validation*.json
+outputs/statistical/*.csv
+outputs/statistical/*validation*.json
+outputs/statistical/*review*.json
+outputs/final/*.csv
+outputs/final/*validation*.json
+
+# Additional unpublished analytical artifacts
+outputs/final/kohli_jadeja_exposure_audit.md
+outputs/statistical/baseline_model_report.json

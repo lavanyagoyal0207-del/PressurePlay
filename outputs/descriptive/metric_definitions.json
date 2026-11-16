@@ -1,0 +1,199 @@
+{
+  "metadata": {
+    "title": "Player-Level Descriptive Batting and Bowling Metric Definitions",
+    "project": "Rajasthan Royals SupeRR Selector Season 2 Analysis",
+    "stage": "Stage 3",
+    "methodology_version": "V5 (Final Empirical Descriptive)",
+    "date_created": "2026-11-15T17:53:42.147844+00:00",
+    "scope_boundaries": "Descriptive statistics only. No composite scores, rankings, weights, shrinkage, expected-run models (xR), or arbitrary thresholds."
+  },
+  "taxonomy_of_extras": {
+    "clean_deliveries": {
+      "values": [
+        "None",
+        ""
+      ],
+      "description": "Standard deliveries off the bat with no illegal bowling or extraneous penalty. Sole input to clean numerators and denominators."
+    },
+    "wides": {
+      "values": [
+        "wide"
+      ],
+      "description": "Illegal deliveries not faced by the batter. Excluded from clean deliveries and legal balls. 1-run penalty is unrecorded in source data."
+    },
+    "oversteps": {
+      "values": [
+        "Overstep"
+      ],
+      "description": "No-balls faced by the batter. Batter runs off the bat are present in runs column, but 1-run penalty is unrecorded and non-boundary runs attribution is unverified. Excluded from clean deliveries and legal deliveries."
+    },
+    "byes": {
+      "values": [
+        "byes"
+      ],
+      "description": "Legal deliveries where runs are awarded to the team total, not the batter. Included in legal deliveries; excluded from clean deliveries off the bat."
+    },
+    "legbyes": {
+      "values": [
+        "legbyes"
+      ],
+      "description": "Legal deliveries where runs are off the pad/body and awarded to team total. Included in legal deliveries; excluded from clean deliveries off the bat."
+    },
+    "unresolved_extras": {
+      "values": [
+        "other",
+        "Penalty"
+      ],
+      "description": "Unclassified delivery events in source data. Excluded from clean and legal deliveries pending official clarification."
+    }
+  },
+  "pressure_cohorts": {
+    "f1_primary": "All deliveries from the 2nd wicket (W2) through innings end for innings where W2 occurred at overid <= 8.",
+    "f1_alt1a_all": "All deliveries from W2 through exactly 60 legal deliveries (or innings end if truncated) for innings where W2 occurred at overid <= 8.",
+    "f1_alt1a_complete_60": "Subset of Alt 1A where exactly 60 verified legal deliveries were completed without reaching innings end or unresolved extras.",
+    "f1_alt1a_truncated": "Subset of Alt 1A where the innings terminated before reaching 60 verified legal deliveries.",
+    "f1_alt1a_uncertain": "Subset of Alt 1A where an unclassified extra ('other' or 'Penalty') occurred before the 60th legal delivery endpoint.",
+    "f4_knockout": "All deliveries bowled in the 20 official IPL playoff / knockout matches across IPL 2022 to IPL 2026.",
+    "f1_f4_union": "Union of deliveries eligible under F1 Primary or F4 Knockout (103,394 unique deliveries with 0 double-counting)."
+  },
+  "split_types": {
+    "career": "Overall career aggregation within the specified pressure cohort across all available matches and seasons.",
+    "season": "Aggregation grouped by individual season within the specified pressure cohort.",
+    "competition": "Aggregation grouped by individual competition and season within the specified pressure cohort."
+  },
+  "batter_metrics": {
+    "pressure_deliveries_faced": {
+      "label": "Pressure Deliveries Faced (Total)",
+      "formula": "COUNT(delivery)",
+      "description": "Total delivery events where the player was the on-strike batter in the pressure cohort. Reconciles exactly with cohort delivery totals."
+    },
+    "batter_balls_faced": {
+      "label": "Batter Balls Faced (Excluding Wides)",
+      "formula": "COUNT(delivery WHERE extras_type != 'wide')",
+      "description": "Total deliveries where the batter physically faced a bowled ball (includes clean balls, Oversteps, byes, and legbyes)."
+    },
+    "clean_deliveries_faced": {
+      "label": "Clean Deliveries Faced",
+      "formula": "COUNT(delivery WHERE extras_type IN ('None', ''))",
+      "description": "Deliveries faced by the batter with zero extras. Strict denominator for clean batting scoring rate."
+    },
+    "clean_batter_runs": {
+      "label": "Clean Batter Runs",
+      "formula": "SUM(runs WHERE extras_type IN ('None', ''))",
+      "description": "Runs scored directly off the bat on clean deliveries. Excludes Overstep runs and team extras."
+    },
+    "clean_scoring_rate": {
+      "label": "Clean-Delivery Scoring Rate",
+      "formula": "clean_batter_runs / clean_deliveries_faced",
+      "description": "Ratio of clean runs scored to clean balls faced. Defined strictly on clean deliveries. Must NOT be labeled conventional strike rate."
+    },
+    "fours_off_bat": {
+      "label": "Fours Off The Bat",
+      "formula": "COUNT(delivery WHERE is_four == True)",
+      "description": "Boundaries of 4 runs awarded off the bat."
+    },
+    "sixes_off_bat": {
+      "label": "Sixes Off The Bat",
+      "formula": "COUNT(delivery WHERE is_six == True)",
+      "description": "Boundaries of 6 runs awarded off the bat."
+    },
+    "all_run_fours": {
+      "label": "All-Run Fours",
+      "formula": "COUNT(delivery WHERE runs == 4 AND is_four == False)",
+      "description": "Deliveries where 4 runs were scored via running between the wickets without a boundary flag."
+    },
+    "all_run_sixes": {
+      "label": "All-Run Sixes",
+      "formula": "COUNT(delivery WHERE runs == 6 AND is_six == False)",
+      "description": "Deliveries where 6 runs were scored via running between the wickets without a boundary flag."
+    },
+    "striker_dismissals_total": {
+      "label": "Striker Dismissals (Total)",
+      "formula": "COUNT(delivery WHERE is_wicket == True AND dismissed_player_id == striker_id)",
+      "description": "Total times the on-strike batter was dismissed in the pressure cohort. Non-striker run-outs are strictly excluded."
+    },
+    "striker_dismissals_by_type": {
+      "caught": "COUNT(Caught)",
+      "bowled": "COUNT(Bowled)",
+      "lbw": "COUNT(LBW)",
+      "run_out": "COUNT(RunOut where dismissed_player == striker)",
+      "stumped": "COUNT(Stump)",
+      "hit_wicket": "COUNT(Hit Wicket)",
+      "other": "COUNT(Obstructing the field, etc.)"
+    },
+    "coverage": {
+      "matches_faced": "Distinct count of match_id where the player faced at least one pressure delivery.",
+      "innings_faced": "Distinct count of (match_id, innings) where the player faced at least one pressure delivery.",
+      "competitions_faced": "Distinct count of comp_id where the player faced at least one pressure delivery.",
+      "seasons_faced": "Distinct count of season where the player faced at least one pressure delivery."
+    }
+  },
+  "bowler_metrics": {
+    "pressure_deliveries_bowled_total": {
+      "label": "Pressure Deliveries Bowled (Total)",
+      "formula": "COUNT(delivery)",
+      "description": "Total delivery attempts bowled in the pressure cohort, including wides and Oversteps. Reconciles exactly with cohort delivery totals."
+    },
+    "legal_deliveries_bowled": {
+      "label": "Legal Deliveries Bowled",
+      "formula": "COUNT(delivery WHERE extras_type IN ('None', '', 'byes', 'legbyes'))",
+      "description": "Deliveries credited toward completed overs. Excludes wides, Oversteps, and unresolved extras."
+    },
+    "bowler_credited_wickets": {
+      "label": "Bowler-Credited Wickets",
+      "formula": "COUNT(delivery WHERE is_wicket == True AND dismissal_type IN ('Bowled', 'Caught', 'LBW', 'Stump', 'Hit Wicket'))",
+      "description": "Dismissals officially credited to the bowler's bowling record. Excludes run-outs, retired outs, and obstructing the field."
+    },
+    "wickets_by_type": {
+      "caught": "COUNT(Caught)",
+      "bowled": "COUNT(Bowled)",
+      "lbw": "COUNT(LBW)",
+      "stumped": "COUNT(Stump)",
+      "hit_wicket": "COUNT(Hit Wicket)"
+    },
+    "legal_balls_per_credited_wicket": {
+      "label": "Legal Deliveries Per Credited Wicket",
+      "formula": "legal_deliveries_bowled / bowler_credited_wickets",
+      "description": "Average legal balls bowled per bowler-credited wicket. Reported as null when bowler_credited_wickets == 0."
+    },
+    "clean_deliveries_bowled": {
+      "label": "Clean Deliveries Bowled",
+      "formula": "COUNT(delivery WHERE extras_type IN ('None', ''))",
+      "description": "Bowled deliveries off the bat with zero extras. Strict denominator for clean containment rate."
+    },
+    "clean_runs_conceded": {
+      "label": "Clean Runs Conceded",
+      "formula": "SUM(runs WHERE extras_type IN ('None', ''))",
+      "description": "Runs scored directly off the bat against the bowler on clean deliveries."
+    },
+    "clean_containment_rate": {
+      "label": "Clean Containment Rate",
+      "formula": "clean_runs_conceded / clean_deliveries_bowled",
+      "description": "Ratio of clean runs conceded to clean deliveries bowled. Clean numerator over clean denominator."
+    },
+    "coverage": {
+      "matches_bowled": "Distinct count of match_id where the bowler bowled at least one pressure delivery.",
+      "innings_bowled": "Distinct count of (match_id, innings) where the bowler bowled at least one pressure delivery.",
+      "competitions_bowled": "Distinct count of comp_id where the bowler bowled at least one pressure delivery.",
+      "seasons_bowled": "Distinct count of season where the bowler bowled at least one pressure delivery."
+    }
+  },
+  "excluded_metrics": {
+    "bowler_total_runs_conceded": {
+      "status": "EXCLUDED",
+      "reason": "Source data omits 1-run penalty for 7,714 wides and 576 Oversteps in the runs column. Reconstructing total runs conceded would require unvalidated imputation of penalty rules."
+    },
+    "official_economy_rate": {
+      "status": "EXCLUDED",
+      "reason": "Requires total runs conceded (including wide and no-ball penalties) divided by legal overs. Uncomputable without unrecorded penalty runs."
+    },
+    "conventional_batting_strike_rate": {
+      "status": "EXCLUDED",
+      "reason": "Conventional strike rate formula (100 * runs / balls_faced) is statistically compromised due to ambiguity in no-ball run attribution and missing extras penalty tracking."
+    },
+    "team_cumulative_runs_and_required_run_rate": {
+      "status": "EXCLUDED",
+      "reason": "Innings target, revised overs, DLS adjustments, and full non-pressure delivery contexts are unverified at the individual delivery row level."
+    }
+  }
+}
