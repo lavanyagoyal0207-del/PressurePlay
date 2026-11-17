@@ -1,0 +1,221 @@
+{
+  "audit_metadata": {
+    "task": "Final Batter Review (IPL + T20I)",
+    "timestamp": "2026-11-18T00:38:06+0530",
+    "repository": "C:\\Users\\Lavanya Goyal\\OneDrive\\Documents\\rr",
+    "author": "Independent Statistical Auditor",
+    "status": "COMPLETED_VERIFIED",
+    "audit_corrections_applied": [
+      "Primary cross-format comparison set strictly to Condition C01 (Early Collapse F1) for operational equivalence.",
+      "Condition C14 (F4 Knockouts) and C15 (F1+F4) explicitly documented as Unavailable in T20I.",
+      "Removed unsupported narrative claims of intent/strategy for Virat Kohli; reported observed empirical rates only.",
+      "Verified career-window classifications: confirmed T20I retirements limited to Kohli, Rohit Sharma, and Jadeja; other players labeled active with last observed appearance noted.",
+      "Removed claims of definitive cross-format ranking from summed Shrunk RAE; added explicit exposure and non-additivity limitations.",
+      "Audited and removed words 'robust', 'elite', 'dominant', 'consistent', and 'specialist'; replaced with evidence-based descriptions.",
+      "Explicitly documented that all IPL Top 10 confidence intervals cross zero, distinguishing point estimates from statistically distinguishable performance.",
+      "Reconciled Kohli family figures and separated IPL death overs (167 balls, +10.04 RAE, SR 182.04) from T20I death overs (77 balls, +22.21 RAE, SR 196.10)."
+    ]
+  },
+  "dataset_summary": {
+    "total_matches": 883,
+    "total_competitions": 141,
+    "ipl_matches_total": 371,
+    "ipl_matches_with_deliveries": 367,
+    "ipl_matches_abandoned_no_balls": 4,
+    "t20i_matches_total": 512,
+    "t20i_matches_with_deliveries": 500,
+    "t20i_matches_abandoned_no_balls": 12,
+    "total_deliveries": 200999,
+    "ipl_clean_deliveries": 82458,
+    "t20i_clean_deliveries": 106709,
+    "ipl_clean_pressure_deliveries_f1_f4": 40384,
+    "t20i_clean_pressure_deliveries_f1": 57134
+  },
+  "baseline_models": {
+    "ipl_model_2": {
+      "description": "Overid x Innings empirical clean runs mean on IPL non-pressure balls",
+      "training_balls": 42074,
+      "global_mean": 1.5557,
+      "empirical_cells": 42
+    },
+    "t20i_model_2": {
+      "description": "Overid x Innings empirical clean runs mean on T20I non-pressure balls",
+      "training_balls": 48417,
+      "global_mean": 1.4346,
+      "empirical_cells": 42
+    },
+    "pooled_model_2": {
+      "description": "Pooled Overid x Innings empirical clean runs mean on all non-pressure balls",
+      "training_balls": 90491,
+      "global_mean": 1.4909,
+      "empirical_cells": 42
+    }
+  },
+  "statistical_parameters": {
+    "ipl": {
+      "sigma2": 3.0499,
+      "mu_prior": -0.1746,
+      "tau2": 0.0394
+    },
+    "t20i": {
+      "sigma2": 2.6962,
+      "mu_prior": -0.1823,
+      "tau2": 0.0405
+    },
+    "combined": {
+      "sigma2": 2.8429,
+      "mu_prior": -0.1807,
+      "tau2": 0.0358
+    }
+  },
+  "exposure_threshold_counts": {
+    "ipl": {
+      "unfiltered": 326,
+      "ge_30_balls": 175,
+      "ge_100_balls": 103,
+      "ge_200_balls": 67,
+      "ge_300_balls": 49
+    },
+    "t20i": {
+      "unfiltered": 715,
+      "ge_30_balls": 367,
+      "ge_100_balls": 167,
+      "ge_200_balls": 82,
+      "ge_300_balls": 50
+    }
+  },
+  "frozen_baseline_hashes_verified": {
+    "outputs/final/final_batter_leaderboard.csv": "d0e73b49824ae9941cde80a9b72d674a1e17aa095e21ff41104d49c2e0f68d68",
+    "outputs/final/final_bowler_diagnostics.csv": "3e5607fa8a2c16b4abe72ab59ae5ae6f3fb439f03230d5c5edac876b51449f04",
+    "outputs/final/final_validation_report.json": "803e661f3ccc641f4aa1d2bf0d0b834e4cdd99b2e9fe3d7c0633ba75bfa44f4f",
+    "outputs/statistical/batter_pressure_estimates.csv": "307969959aa89094b0a17aafa29cbbe37e0866fd70b5b7540f73498adadfb627",
+    "outputs/statistical/bowler_pressure_diagnostics.csv": "ac720eaf2c023a9e65aca216a10fac825d789029d221b1d87925e290cd4e6c22",
+    "outputs/statistical/bootstrap_uncertainty.csv": "befdb7e652fd49fb2608d4780fe2097bd4c35b4ee976b9b1ab0d109a6adc3f33",
+    "outputs/statistical/baseline_model_report.json": "9fcd247fad124bbf325fa9c6d629aaf7076268f38a48d8fada91622b150d85ea",
+    "outputs/statistical/stage4_validation_report.json": "b2e5dd61b667e3ef275b57ae474f055f5d291d76588543b597872f998ed1da5e"
+  },
+  "combined_exploratory_leaderboard": {
+    "methodology": "Additive aggregation of format-specific Empirical Bayes Shrunk RAE",
+    "status": "EXPLORATORY_REFERENCE_ONLY",
+    "eligibility_threshold_balls": 100,
+    "total_eligible_batters": 239,
+    "top10": [
+      {
+        "rank": 1,
+        "player_name": "Suryakumar Yadav",
+        "ipl_contribution": 33.14,
+        "t20i_contribution": 147.15,
+        "combined_score": 180.29,
+        "pressure_balls": 1778,
+        "ipl_pressure_balls": 909,
+        "t20i_pressure_balls": 869,
+        "format_exposure_type": "Dual-Format (IPL & T20I)"
+      },
+      {
+        "rank": 2,
+        "player_name": "Tim David",
+        "ipl_contribution": -23.43,
+        "t20i_contribution": 112.79,
+        "combined_score": 89.36,
+        "pressure_balls": 836,
+        "ipl_pressure_balls": 391,
+        "t20i_pressure_balls": 445,
+        "format_exposure_type": "Dual-Format (IPL & T20I)"
+      },
+      {
+        "rank": 3,
+        "player_name": "Rajat Patidar",
+        "ipl_contribution": 75.77,
+        "t20i_contribution": 0.0,
+        "combined_score": 75.77,
+        "pressure_balls": 601,
+        "ipl_pressure_balls": 601,
+        "t20i_pressure_balls": 0,
+        "format_exposure_type": "IPL Heavily Weighted"
+      },
+      {
+        "rank": 4,
+        "player_name": "Abhishek Sharma",
+        "ipl_contribution": -8.94,
+        "t20i_contribution": 64.22,
+        "combined_score": 55.28,
+        "pressure_balls": 383,
+        "ipl_pressure_balls": 165,
+        "t20i_pressure_balls": 218,
+        "format_exposure_type": "Dual-Format (IPL & T20I)"
+      },
+      {
+        "rank": 5,
+        "player_name": "Ishan Kishan",
+        "ipl_contribution": 14.37,
+        "t20i_contribution": 40.75,
+        "combined_score": 55.12,
+        "pressure_balls": 729,
+        "ipl_pressure_balls": 369,
+        "t20i_pressure_balls": 360,
+        "format_exposure_type": "Dual-Format (IPL & T20I)"
+      },
+      {
+        "rank": 6,
+        "player_name": "Glenn Maxwell",
+        "ipl_contribution": 0.62,
+        "t20i_contribution": 46.39,
+        "combined_score": 47.01,
+        "pressure_balls": 636,
+        "ipl_pressure_balls": 288,
+        "t20i_pressure_balls": 348,
+        "format_exposure_type": "Dual-Format (IPL & T20I)"
+      },
+      {
+        "rank": 7,
+        "player_name": "Harry Brook",
+        "ipl_contribution": -28.57,
+        "t20i_contribution": 68.0,
+        "combined_score": 39.43,
+        "pressure_balls": 548,
+        "ipl_pressure_balls": 90,
+        "t20i_pressure_balls": 458,
+        "format_exposure_type": "Dual-Format (IPL & T20I)"
+      },
+      {
+        "rank": 8,
+        "player_name": "Heinrich Klaasen",
+        "ipl_contribution": 49.33,
+        "t20i_contribution": -13.71,
+        "combined_score": 35.62,
+        "pressure_balls": 985,
+        "ipl_pressure_balls": 810,
+        "t20i_pressure_balls": 175,
+        "format_exposure_type": "Dual-Format (IPL & T20I)"
+      },
+      {
+        "rank": 9,
+        "player_name": "Andre Russell",
+        "ipl_contribution": 4.08,
+        "t20i_contribution": 30.46,
+        "combined_score": 34.54,
+        "pressure_balls": 618,
+        "ipl_pressure_balls": 486,
+        "t20i_pressure_balls": 132,
+        "format_exposure_type": "Dual-Format (IPL & T20I)"
+      },
+      {
+        "rank": 10,
+        "player_name": "Tom Banton",
+        "ipl_contribution": 0.0,
+        "t20i_contribution": 29.39,
+        "combined_score": 29.39,
+        "pressure_balls": 193,
+        "ipl_pressure_balls": 0,
+        "t20i_pressure_balls": 193,
+        "format_exposure_type": "T20I Heavily Weighted"
+      }
+    ],
+    "methodological_limitations": [
+      "Linear addition assumes exchangeability across disparate league vs international priors (mu_prior, tau2).",
+      "IPL baseline rate (1.556 runs/ball) exceeds T20I baseline rate (1.435 runs/ball) by +12.1 strike rate points.",
+      "Career window and opportunity horizons are unequal (e.g. Patidar 0 T20Is; Banton 0 IPL; Kohli retired in 2024).",
+      "This ranking must remain strictly exploratory and secondary to primary format-specific leaderboards."
+    ]
+  }
+}

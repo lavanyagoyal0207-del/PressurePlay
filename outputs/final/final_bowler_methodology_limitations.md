@@ -1,7 +1,7 @@
 # Bowler Pressure Framework: Final Methodology & Limitations
 **Project:** SupeRR Selector Season 2 — Analytical Methodology Documentation  
 **Repository Working Directory:** `C:\Users\Lavanya Goyal\OneDrive\Documents\rr`  
-**Dataset Scope:** IPL Seasons 2022–2026 (367 Played Matches, 87,687 Deliveries)  
+**Dataset Scope:** IPL Seasons 2022–2026 (371 Scheduled Matches, 367 Played Matches, 87,687 Deliveries; March 26, 2022 – May 26, 2026) evaluated specifically for IPL-specific bowler selection, drawn from the overarching 141-competition master dataset (141 registered competitions: 5 IPL editions, 134 T20I competitions, 2 mixed-status developmental tournaments, reconciling under ICC regulations and primary board declarations to 371 scheduled IPL matches [367 played, 87,687 deliveries], 483 scheduled T20Is [471 played, 106,582 deliveries], and 29 Other T20 fixtures [29 played, 6,730 deliveries]; 883 scheduled matches, 867 played matches, 16 abandoned matches, 200,999 total deliveries; January 22, 2022 – November 1, 2026).  
 **Deliverable Document:** [outputs/final/final_bowler_methodology_limitations.md](file:///C:/Users/Lavanya%20Goyal/OneDrive/Documents/rr/outputs/final/final_bowler_methodology_limitations.md)  
 **Status:** Finalized & Validated  
 

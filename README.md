@@ -28,11 +28,11 @@
    - [Empirical Bayes (DerSimonian–Laird) Shrinkage](#empirical-bayes-dersimonianlaird-shrinkage)
    - [Match-Level Cluster Bootstrap (5,000 Replicates)](#match-level-cluster-bootstrap-5000-replicates)
    - [Systematic Sensitivity Analysis](#systematic-sensitivity-analysis)
-9. [Key Findings & Analytical Outputs](#key-findings--analytical-outputs)
-   - [Batter Leaderboard Highlights](#batter-leaderboard-highlights)
-   - [Sub-Baseline Scoring Diagnostics](#sub-baseline-scoring-diagnostics)
-   - [Bowler Pressure Diagnostics](#bowler-pressure-diagnostics)
-   - [Evidence Tiers & Shortlist Categorization](#evidence-tiers--shortlist-categorization)
+9. [Aggregate Findings & Analytical Outputs](#aggregate-findings--analytical-outputs)
+   - [Population-Level Distribution of Batter Performance](#population-level-distribution-of-batter-performance)
+   - [Format-Split & Exposure Dynamics](#format-split--exposure-dynamics)
+   - [Bowler Pressure Containment Diagnostics](#bowler-pressure-containment-diagnostics)
+   - [Evidence Tiers & Conceptual Performance Archetypes](#evidence-tiers--conceptual-performance-archetypes)
 10. [Project Architecture & Repository Structure](#project-architecture--repository-structure)
 11. [Reproducibility & Execution Instructions](#reproducibility--execution-instructions)
 12. [Limitations, Assumptions & Boundary Disclosures](#limitations-assumptions--boundary-disclosures)
@@ -42,7 +42,7 @@
 
 ## Project Overview
 
-**PressurePlay** is an end-to-end statistical modeling and diagnostics framework designed to rigorously quantify cricket player performance under verified, high-leverage Twenty20 (T20) match pressure. Built on a dataset of **200,999 delivery rows** spanning **883 matches** from **2022 through 2026** (comprising 371 Indian Premier League matches, 482 Men's Twenty20 Internationals, and 30 emerging Asian tournament fixtures), this repository replaces conventional aggregate averages with context-conditioned empirical baselines, small-sample Empirical Bayes shrinkage, and match-cluster bootstrap uncertainty estimation.
+**PressurePlay** is an end-to-end statistical modeling and diagnostics framework designed to rigorously quantify cricket player performance under verified, high-leverage Twenty20 (T20) match pressure. Built on a dataset of **200,999 delivery rows** spanning **883 scheduled matches** (867 played matches, 16 abandoned matches) across **141 registered competitions** from **2022 through 2026** (reconciling under ICC match-status regulations and board declarations to 371 Indian Premier League matches [367 played, 87,687 deliveries], 483 Men's Twenty20 Internationals [471 played, 106,582 deliveries], and 29 Other Twenty20 fixtures [29 played, 6,730 deliveries, including one unresolved fixture provisionally retained]), this repository replaces conventional aggregate averages with context-conditioned empirical baselines, small-sample Empirical Bayes shrinkage, and match-cluster bootstrap uncertainty estimation.
 
 Conventional cricket statistics—such as raw batting average, conventional batting strike rate, and overall bowling economy—blend low-leverage run accumulations with acute game crises. PressurePlay isolates genuine pressure subsets, establishes zero-leakage non-pressure expectations, penalizes small-sample noise, and provides decision-ready strategic diagnostics without introducing artificial game-leverage weights.
 
@@ -116,12 +116,12 @@ flowchart TD
 ### Family 1 ($F_1$): Early-Wicket Collapse
 - **Definition:** The second batting wicket ($W_2$) of an innings falls at or before delivery over index 8 ($\text{overid}(W_2) \le 8$).
 - **Window Scope:** Extends from $W_2$ inclusive through the final delivery of the innings.
-- **Empirical Volume:** Captures 93,110 clean deliveries where an early top-order failure forced middle- and lower-order batters into immediate crisis management.
+- **Empirical Volume:** Captures **95,138 clean deliveries** across 100,879 F1-eligible deliveries. When broken down by overlap with $F_4$ playoff fixtures, this comprises **93,110 $F_1$-only clean deliveries** and **2,028 overlapping clean deliveries** (where an early collapse occurred during a playoff knockout match).
 - **Sensitivity Cohorts:** Evaluated against Alt 1A Complete-60 (first 60 legal balls following $W_2$) and varying threshold cutoffs ($W_2 \le 6$ and $W_2 \le 10$).
 
 ### Family 4 ($F_4$): Tournament Playoff & Knockout Fixtures
 - **Definition:** All deliveries across both innings of tournament playoff fixtures (Eliminators, Qualifiers, Semi-Finals, and Finals).
-- **Empirical Volume:** 20 official playoff matches across the 2022–2026 IPL seasons, encompassing 4,408 clean deliveries.
+- **Empirical Volume:** 20 official playoff matches across the 2022–2026 IPL seasons, encompassing **4,408 clean deliveries** across 4,667 total deliveries (comprising **2,380 $F_4$-only clean deliveries** and **2,028 overlapping clean deliveries** with $F_1$).
 
 ### Family Overlap Normalization ($F_1 \cup F_4$)
 When an innings satisfies both $F_1$ (early collapse) and occurs in an $F_4$ (knockout match), deliveries within the intersection belong to both families. To avoid double-counting while preserving overall exposure:
@@ -132,7 +132,8 @@ With raw weights $\text{raw\_w}_1 = 1.0$ and $\text{raw\_w}_4 = 0.5$:
 - **$F_1$-Only Delivery (93,110 clean balls):** $w_1 = 1.0 / 1.0 = 1.0$
 - **$F_4$-Only Delivery (2,380 clean balls):** $w_4 = 0.5 / 0.5 = 1.0$
 - **Overlap Delivery ($F_1 \cap F_4$, 2,028 clean balls):** $w_1 = 1.0 / 1.5 = 2/3$, $w_4 = 0.5 / 1.5 = 1/3$
-- **Combined Weight:** $w_1(d) + w_4(d) = 1.0$ for every delivery in the union (97,518 clean deliveries).
+- **Combined Cohort Union ($F_1 \cup F_4$):** Exactly $93,110 + 2,380 + 2,028 = \mathbf{97,518}$ clean pressure deliveries ($w_1(d) + w_4(d) = 1.0$ for every delivery in the union).
+- **Total Clean Volume Reconciliation:** Total $F_1$ clean deliveries ($93,110 + 2,028 = \mathbf{95,138}$) and total $F_4$ clean deliveries ($2,380 + 2,028 = \mathbf{4,408}$) reconcile precisely with Stage 3 descriptive records without double-counting.
 
 > **Important:** The 2:1 ratio operates **only on overlapping deliveries**. Standalone $F_4$-only deliveries contribute full weight 1.0.
 
@@ -196,12 +197,12 @@ $$\text{Raw Rate Above Expected: } \theta_p = \frac{Y_p - E_p}{n_p} \quad (\text
 
 ### Expected Runs Baseline (Model 2)
 
-Player execution is evaluated against an empirical expectation baseline fitted on **91,649 non-pressure clean deliveries** (`f1_primary == False` and `f4_knockout == False`):
+Player execution is evaluated against an empirical expectation baseline fitted on **91,649 total non-pressure clean training deliveries** (`f1_primary == False` and `f4_knockout == False`), decomposing into **91,623 standard-over non-pressure clean deliveries** (IPL: 42,063, T20I: 46,798, Other T20: 2,762) and **26 Super Over non-pressure clean deliveries** (IPL: 11, T20I: 8, Other T20: 7; summing to competition totals of IPL: 42,074, T20I: 46,806, Other T20: 2,769):
 
 - **Feature Space:** Discrete interaction of delivery over index (`overid` in 1..20) and match innings (1..4), creating **42 unconstrained empirical lookup cells** (40 standard overs across innings 1 and 2, plus 2 sparse Super Over cells).
 - **Zero Leakage:** Pressure delivery outcomes never inform their own expected baseline.
 - **Non-Parametric Specification:** Lookups are unconstrained empirical cell-by-cell means without imposing parametric functional forms or monotonic constraints.
-- **Super Over Support:** Super Over baseline cells (`overid=1, innings=3` and `innings=4`) contain only 15 and 11 clean deliveries in the training corpus. While 6 clean pressure deliveries mapped to cell `(1, 3)` without fallback, Super Over estimates are substantially less reliable than standard innings 1–2 estimates.
+- **Super Over Support & Accounting:** Across the 2022–2026 dataset, 38 total Super Over attempts occurred across 6 matches. 6 non-clean deliveries (wides/extras) are excluded because they fail the clean-delivery definition. Of the 32 clean Super Over deliveries, 6 are excluded from baseline training because they are $F_1$ pressure deliveries (all in innings 3; 0 in $F_4$), leaving exactly 26 non-pressure clean deliveries (15 in innings 3, 11 in innings 4). While the 6 Super Over pressure deliveries map directly to cell `(1, 3)` without fallback, Super Over baseline estimates are substantially less reliable than standard innings 1–2 estimates.
 
 ### Baseline Model Comparison & Out-of-Fold Cross-Validation
 
@@ -221,7 +222,7 @@ Model 2 achieved the optimal balance of out-of-fold calibration (slope = 0.9439,
 
 ### Empirical Bayes (DerSimonian–Laird) Shrinkage
 
-To separate genuine situational scoring ability from small-sample fluctuation, player excess rate differences $\theta_p$ were regularized using the DerSimonian–Laird (DL) random-effects estimator:
+To separate genuine situational scoring performance from small-sample fluctuation, player excess rate differences $\theta_p$ were regularized using the DerSimonian–Laird (DL) random-effects estimator:
 
 $$\theta_p \mid \theta_p^{\text{true}} \sim \mathcal{N}\left(\theta_p^{\text{true}}, v_p\right), \quad v_p = \frac{\sigma^2}{n_p}$$
 
@@ -234,7 +235,7 @@ $$\theta_p^{\text{true}} \sim \mathcal{N}\left(\mu, \tau^2\right)$$
 - **Shrinkage Weight & Estimate:**
   $$B_p = \frac{v_p}{\tau^2 + v_p}, \quad \theta_p^* = (1 - B_p)\theta_p + B_p \mu, \quad \text{Shrunk RAE}_p = n_p \cdot \theta_p^*$$
 
-Batters with $n_p \ge 150$ clean balls retain $\approx 70\text{--}90\%$ of their raw deviation ($B_p < 0.30$), while low-exposure batters ($n_p < 20$) are shrunk heavily toward the population prior ($B_p > 0.85$).
+Batters with $n_p \ge 150$ clean balls retain $\approx 70\text{--}90\%$ of their raw deviation ($B_p < 0.30$), while low-exposure batters experience greater estimation uncertainty and stronger shrinkage toward the population prior.
 
 ### Match-Level Cluster Bootstrap (5,000 Replicates)
 
@@ -264,72 +265,67 @@ Sensitivity analysis evaluated the stability of player rankings across 6 methodo
 
 ---
 
-## Key Findings & Analytical Outputs
+## Aggregate Findings & Analytical Outputs
 
-### Batter Leaderboard Highlights
+### Population-Level Distribution of Batter Performance
 
-Top performers ranked by **Cumulative Shrunk Runs Above Expected (RAE)** in the Weighted Composite ($F_1 \cup F_4$) cohort among qualified batters ($n_p \ge 30$ clean balls faced):
+Across the dataset universe, **854 total batters** faced deliveries under high-leverage match conditions. Applying the minimum exposure threshold of $n_p \ge 30$ clean balls identified **456 qualified batters** eligible for formal ranking and evidence-tier evaluation (the remaining 398 batters had insufficient exposure, $n_p < 30$).
 
-| Rank | Player Name | Evidence Tier | Clean Balls ($n_p$) | Observed Runs | Expected Runs | Raw RAE | Shrunk RAE | Shrunk Rate Diff ($\text{runs/ball}$) | 95% Bootstrap CI | Clean Scoring Rate |
-|:---:|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **1** | **Suryakumar Yadav** | `STRONG_POSITIVE` | 1,778.0 | 2,899.0 | 2,669.3 | +229.75 | **+209.09** | +0.1176 | `[+32.22, +397.91]` | 1.6305 |
-| **2** | **Tim David** | `PROMISING_UNCERTAIN` | 836.0 | 1,434.0 | 1,301.4 | +132.61 | **+110.94** | +0.1327 | `[-18.71, +266.06]` | 1.7153 |
-| **3** | **Rajat Patidar** | `STRONG_POSITIVE` | 601.0 | 1,042.0 | 910.1 | +131.94 | **+107.16** | +0.1783 | `[+1.07, +235.03]` | 1.7338 |
-| **4** | **Heinrich Klaasen** | `PROMISING_UNCERTAIN` | 985.0 | 1,603.0 | 1,505.5 | +97.51 | **+79.29** | +0.0805 | `[-15.22, +186.18]` | 1.6274 |
-| **5** | **Andre Russell** | `PROMISING_UNCERTAIN` | 618.0 | 1,081.0 | 980.8 | +100.23 | **+78.92** | +0.1277 | `[-26.76, +196.75]` | 1.7492 |
-| **6** | **Ishan Kishan** | `PROMISING_UNCERTAIN` | 729.0 | 1,186.0 | 1,089.2 | +96.84 | **+76.98** | +0.1056 | `[-46.44, +225.64]` | 1.6269 |
-| **7** | **Abhishek Sharma** | `PROMISING_UNCERTAIN` | 383.0 | 672.0 | 577.4 | +94.59 | **+69.59** | +0.1817 | `[-18.79, +184.64]` | 1.7546 |
-| **8** | **Glenn Maxwell** | `PROMISING_UNCERTAIN` | 636.0 | 1,036.0 | 956.3 | +79.68 | **+60.55** | +0.0952 | `[-52.55, +200.47]` | 1.6289 |
-| **9** | **Shreyas Iyer** | `PROMISING_UNCERTAIN` | 1,096.0 | 1,716.0 | 1,646.9 | +69.13 | **+53.16** | +0.0485 | `[-97.55, +221.13]` | 1.5657 |
-| **10** | **Naman Dhir** | `PROMISING_UNCERTAIN` | 355.0 | 604.0 | 555.7 | +48.30 | **+29.89** | +0.0842 | `[-20.82, +90.72]` | 1.7014 |
+Evaluating player performance against the Model 2 baseline reveals the acute scoring depression characteristic of early top-order collapse:
 
-- **Nominal Statistical Significance:** Only **Suryakumar Yadav** (95% CI `[+32.22, +397.91]`) and **Rajat Patidar** (95% CI `[+1.07, +235.03]`) have unadjusted 95% bootstrap confidence intervals strictly excluding zero in the composite cohort.
-- **Ranks 2 and 4–10:** Display positive point estimates above baseline expectations, but their confidence intervals span zero due to match-level clustering variance (classified as `PROMISING_UNCERTAIN`).
+- **Empirical Population Shift:** Across all 456 qualified batters, the mean Shrunk Runs Above Expected (RAE) was **-31.46 runs** (median: **-22.00 runs**, standard deviation: **41.46 runs**, interquartile range: **-43.44 to -10.40 runs**). This empirical distribution confirms that early-collapse match states suppress scoring across the broader batting population relative to standard non-pressure conditions.
+- **Raw vs. Shrunk Divergence:** The unregularized Raw RAE across qualified batters displayed a mean of **-34.67 runs** (median: **-29.55 runs**, standard deviation: **46.42 runs**, interquartile range: **-52.56 to -13.36 runs**). Empirical Bayes shrinkage successfully pulled noisy extreme rates toward the population prior ($\mu = -0.1872$ runs/ball in the composite cohort), stabilizing player evaluations without distorting established high-exposure production.
+- **Evidence Tier Breakdown:**
+  - **`STRONG_POSITIVE_EVIDENCE` ($n = 2$, 0.4% of qualified batters):** Only 2 of the 456 qualified batters demonstrated statistically supported positive divergence where the individual unadjusted 95% bootstrap confidence interval strictly excluded zero.
+  - **`PROMISING_UNCERTAIN` ($n = 30$, 6.6% of qualified batters):** 30 batters achieved positive point estimates above baseline expectations ($\text{Shrunk RAE} > 0$), but their unadjusted 95% match-level cluster bootstrap confidence intervals spanned zero.
+  - **`BELOW_EXPECTATION_UNCERTAIN` ($n = 167$, 36.6% of qualified batters):** 167 batters recorded negative point estimates relative to Model 2 baseline expectations ($\text{Shrunk RAE} < 0$), with 95% confidence intervals spanning zero.
+  - **`STRONG_NEGATIVE_EVIDENCE` ($n = 257$, 56.4% of qualified batters):** 257 batters recorded negative point estimates with unadjusted 95% confidence intervals strictly below zero ($p < 0.05$).
+  - **`INSUFFICIENT_EXPOSURE` ($n = 398$):** Batters with $n_p < 30$ clean balls, where high sampling variance produces stronger shrinkage, pulling estimates heavily toward the population prior and precluding reliable individual evaluation.
 
-### Sub-Baseline Scoring Diagnostics
+### Format-Split & Exposure Dynamics
 
-In early-collapse scenarios ($W_2 \le 8$), certain high-profile batters accumulated substantial negative run residuals relative to the Model 2 baseline:
+Investigating competition splits (domestic IPL vs. international T20I) across player careers yields three key methodological takeaways:
 
-| Player Name | Split Cohort | Clean Balls ($n_p$) | Observed Runs | Expected Runs | Raw RAE | Shrunk RAE | Rate Diff ($\text{runs/ball}$) | 95% Bootstrap CI |
-|---|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Virat Kohli** | Composite ($F_1 \cup F_4$) | 522.0 | 663.0 | 779.9 | -116.93 | **-114.74** | -0.2198 | `[-193.66, -36.50]` |
-| | $F_1$ Primary | 411.0 | 500.0 | 618.0 | -118.01 | **-112.49** | -0.2737 | `[-183.36, -45.82]` |
-| | IPL Only (Diagnostic) | 404.0 | 524.0 | 595.9 | -71.87 | — | -0.1779 | — |
-| | T20I Only (Diagnostic) | 118.0 | 139.0 | 184.1 | -45.05 | — | -0.3818 | — |
-| **Ravindra Jadeja** | Composite ($F_1 \cup F_4$) | 805.0 | 1,107.0 | 1,285.9 | -178.91 | **-176.70** | -0.2195 | `[-267.34, -94.55]` |
-| | $F_1$ Primary | 781.0 | 1,073.0 | 1,243.8 | -170.84 | **-169.24** | -0.2167 | `[-265.11, -88.24]` |
-| | IPL Only (Diagnostic) | 685.0 | 953.0 | 1,093.7 | -140.66 | — | -0.2053 | — |
-| | T20I Only (Diagnostic) | 120.0 | 154.0 | 192.2 | -38.24 | — | -0.3187 | — |
+1. **Domestic Volume Dominance:** Because IPL matches provide the highest concentration of early top-order collapse deliveries within the 2022–2026 window, composite player standing is heavily anchored in domestic IPL exposure.
+2. **Consistency Across Observed Formats:** For batters displaying substantial negative baseline divergence under early collapses, format-specific sub-splits indicate consistent sub-baseline scoring rates across both domestic IPL and international T20I appearances. Restricting to domestic-only data alters absolute run volume but does not reverse negative rate differentials.
+3. **Absence of Counterfactual Projections:** International retirement halts further T20I delivery accumulation in historical records. Observed splits describe actual historical performance within the dataset and **cannot establish counterfactual rankings or quantify the hypothetical impact of unplayed fixtures**.
 
-**Context & Audit Findings:**
-1. **Both Splits Sub-Baseline:** Both players underperformed baseline expectations in both their IPL-only and T20I-only observed splits.
-2. **Substantial IPL Volume:** In the IPL alone, Kohli faced 404.0 clean balls (-71.87 Raw RAE) and Jadeja faced 685.0 clean balls (-140.66 Raw RAE, accounting for 78.6% of his negative run accumulation).
-3. **No Counterfactual Claims:** Following the 2024 ICC Men's T20 World Cup, both players retired from T20Is in June 2024. While observed T20I rate deficits were steeper than IPL rate deficits, these splits describe observed performance and **cannot establish a counterfactual ranking or quantify the effect of missing post-retirement T20I exposure**.
-4. **Descriptive, Not Causal:** These metrics reflect scoring performance relative to baseline in early collapses ($W_2 \le 8$). They do not measure tactical intent, game anchor roles, leadership, or overall player stature.
+### Bowler Pressure Containment Diagnostics
 
-### Bowler Pressure Diagnostics
+A total of **600 bowlers** were evaluated in the composite pressure cohort ($F_1 \cup F_4$) across the full multi-competition master dataset (141 registered competitions: 5 IPL editions, 134 T20I competitions, 2 mixed-status developmental tournaments, reconciling under ICC regulations and board declarations to 371 scheduled IPL matches [367 played, 87,687 deliveries], 483 scheduled T20Is [471 played, 106,582 deliveries], and 29 Other T20 fixtures [29 played, 6,730 deliveries]; 883 scheduled matches, 867 played matches, 16 abandoned matches, 200,999 total deliveries; January 22, 2022 – November 1, 2026). Because unrecorded penalty runs prevent computing official economy rates, bowling analysis evaluates clean containment ($RC_{\text{clean}} / BB_{\text{clean}}$) and legal balls bowled per credited wicket ($BB_{\text{legal}} / \text{Wickets}$):
 
-Due to unrecorded penalty extras in source files, bowlers are evaluated on clean containment, credited wickets, and residual clean runs conceded relative to Model 2 baseline expectations:
+- **Containment Distribution:** Across all 600 bowlers, the mean clean containment rate was **1.42 clean runs conceded per clean ball** (median: **1.38**, standard deviation: **0.47**, interquartile range: **1.19 to 1.58 runs/ball**).
+- **Observed Bowling Performance Profiles:** Across the 600 bowlers evaluated under pressure, empirical performance reflects distinct distributions across clean containment ($RC_{\text{clean}} / BB_{\text{clean}}$) and dismissal frequency ($BB_{\text{legal}} / \text{Wickets}$):
+  - *Low Clean Containment Profiles:* Bowlers conceding clean runs at rates below the population median of 1.38 clean runs/ball, accumulating negative clean run residuals relative to Model 2 baseline expectations.
+  - *High Dismissal Frequency Profiles:* Bowlers recording low legal balls bowled per credited wicket under pressure, observed across a spectrum of clean containment rates.
 
-| Bowler Name | Legal Balls | Clean Balls | Clean Runs Conceded | Clean Containment Rate | Credited Wickets | Balls / Wicket | Model 2 Exp Runs | Clean Runs Residual |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Sunil Narine** | 798 | 782 | 763 | **0.9757** | 36 | 22.17 | 1,154.72 | **-391.72** |
-| **Akeal Hosein** | 675 | 672 | 693 | **1.0312** | 45 | 15.00 | 1,004.16 | **-311.16** |
-| **Jasprit Bumrah** | 753 | 740 | 815 | **1.1014** | 51 | 14.76 | 1,179.22 | **-364.22** |
-| **Varun Chakravarthy** | 1,225 | 1,209 | 1,412 | **1.1679** | 98 | 12.50 | 1,821.33 | **-409.33** |
-| **Rashid Khan** | 1,781 | 1,747 | 2,118 | **1.2124** | 108 | 16.49 | 2,629.84 | **-511.84** |
-| **Axar Patel** | 1,467 | 1,454 | 1,790 | **1.2311** | 73 | 20.10 | 2,175.47 | **-385.47** |
-| **Wanindu Hasaranga** | 1,224 | 1,203 | 1,558 | **1.2951** | 98 | 12.49 | 1,774.26 | **-216.26** |
-| **Arshdeep Singh** | 1,198 | 1,176 | 1,641 | **1.3954** | 101 | 11.86 | 1,936.51 | **-295.51** |
+### Evidence Tiers & Conceptual Performance Archetypes
 
-### Evidence Tiers & Shortlist Categorization
+To illustrate how the multi-stage framework operates without publishing proprietary or player-specific rankings, the evidence-tier taxonomy categorizes players based on empirical point estimates, shrinkage regularization, clean exposure volume, and cluster bootstrap uncertainty. These archetypes represent conceptual interpretations of statistical evidence tiers rather than direct measurements of intrinsic player ability, tactical intent, or unmeasured outcomes such as wicket preservation:
 
-Qualified batters ($n_p \ge 30$) are categorized into 4 evidence tiers based on point estimates and conditional 95% bootstrap confidence intervals:
+- **Nominally Significant Positive Evidence (`STRONG_POSITIVE_EVIDENCE`):**
+  - *Statistical Profile:* Cumulative Shrunk RAE $> 0$ and shrunk rate differential $\theta_p^* > 0$, indicating clean scoring performance above Model 2 baseline expectations in the weighted composite ($F_1 \cup F_4$) cohort.
+  - *Exposure & Regularization:* High clean-ball exposure ($n_p \ge 30$) compresses sampling variance ($v_p \ll \tau^2$), yielding low shrinkage factors ($B_p < 0.20$ among qualified players in this tier) so regularized estimates remain anchored near observed rate differentials.
+  - *Bootstrap Uncertainty:* The unadjusted 95% match-level cluster bootstrap confidence interval strictly excludes zero (lower bound $> 0$).
 
-- **`STRONG_POSITIVE_EVIDENCE`:** Shrunk RAE $> 0$, 95% CI lower bound $> 0$ (e.g., Suryakumar Yadav, Rajat Patidar).
-- **`PROMISING_UNCERTAIN`:** Shrunk RAE $> 0$, 95% CI lower bound $\le 0$ (e.g., Tim David, Heinrich Klaasen, Andre Russell).
-- **`STRONG_NEGATIVE_EVIDENCE`:** Shrunk RAE $< 0$, 95% CI upper bound $< 0$ (e.g., Virat Kohli, Ravindra Jadeja).
-- **`BELOW_EXPECTATION_UNCERTAIN`:** Shrunk RAE $< 0$, 95% CI upper bound $\ge 0$ (e.g., MS Dhoni: -66.20 Shrunk RAE, 95% CI `[-151.93, +10.95]`).
+- **Positive Point Estimate with Bootstrap Overlap (`PROMISING_UNCERTAIN`):**
+  - *Statistical Profile:* Cumulative Shrunk RAE $> 0$ and shrunk rate differential $\theta_p^* > 0$, scoring above Model 2 baseline expectations.
+  - *Exposure & Regularization:* Moderate exposure where Empirical Bayes shrinkage pulls raw rates toward the population prior ($\mu = -0.1872$ runs/ball) according to player-specific sampling variance ($v_p = \sigma^2 / n_p$).
+  - *Bootstrap Uncertainty:* The 95% match-level cluster bootstrap confidence interval spans zero (lower bound $\le 0$), indicating that observed positive sample divergence does not achieve nominal statistical significance under match-level clustering.
+
+- **Negative Point Estimate with Bootstrap Overlap (`BELOW_EXPECTATION_UNCERTAIN`):**
+  - *Statistical Profile:* Cumulative Shrunk RAE $< 0$ and shrunk rate differential $\theta_p^* < 0$, scoring below Model 2 baseline expectations.
+  - *Exposure & Regularization:* Point estimates regularized toward the population prior ($\mu = -0.1872$ runs/ball) based on available exposure.
+  - *Bootstrap Uncertainty:* The 95% match-level cluster bootstrap confidence interval spans zero (upper bound $\ge 0$), meaning the observed scoring deficit does not reach nominal statistical significance under match-level cluster resampling.
+
+- **Nominally Significant Negative Evidence (`STRONG_NEGATIVE_EVIDENCE`):**
+  - *Statistical Profile:* Cumulative Shrunk RAE $< 0$ and shrunk rate differential $\theta_p^* < 0$, scoring below Model 2 baseline expectations.
+  - *Exposure & Regularization:* Sufficient exposure ($n_p \ge 30$) yielding a regularized point estimate below baseline.
+  - *Bootstrap Uncertainty:* The unadjusted 95% match-level cluster bootstrap confidence interval strictly excludes zero (upper bound $< 0$, $p < 0.05$), reflecting statistically supported negative divergence under match-level clustering.
+
+- **Insufficient Exposure (`INSUFFICIENT_EXPOSURE`):**
+  - *Statistical Profile:* Fewer than 30 clean balls faced under pressure ($n_p < 30$), where small sample sizes produce high sampling variance ($v_p$), greater estimation uncertainty, and stronger shrinkage.
+  - *Exposure & Regularization:* Point estimates are pulled heavily toward the population prior ($\mu = -0.1872$ runs/ball), precluding reliable individual evaluation.
 
 ---
 
@@ -403,11 +399,14 @@ python build_validation.py
 ## Limitations, Assumptions & Boundary Disclosures
 
 1. **Historical Time Window (2022–2026):** All metrics reflect delivery performance strictly from 2022 through 2026 across the supplied competitions. **This is not an all-time IPL player ranking.**
-2. **Conditional Bootstrap Intervals:** The 5,000 match-cluster bootstrap intervals hold the Model 2 baseline predictions and Empirical Bayes hyperparameters ($\mu, \tau^2$) fixed. They evaluate sampling variation in player outcomes given match clustering, not full posterior predictive distributions.
-3. **Unadjusted Multiple Testing:** Significance flags reflect individual unadjusted 95% confidence intervals. Across 456 eligible batters, individual tests are subject to family-wise false discovery risk.
-4. **Exposure-Dependent Volume:** Cumulative Shrunk RAE ($n_p \cdot \theta_p^*$) scales with balls faced. It reflects cumulative historical production, not a standardized rate or runs-above-replacement metric.
-5. **No Causal Inference:** The models identify empirical associations within observed historical states. They do not predict future performance, model opposition counter-strategies, or establish players' tactical intentions.
-6. **Unavailable Match Context:** Run Chase Pressure ($F_2$) and Required Run Rate ($F_3$) could not be included due to missing delivery-level target scoreboards in the source data. Bowler analysis is restricted to clean containment due to unrecorded extras penalty runs.
+2. **Conditional Bootstrap Intervals:** The 5,000 match-cluster bootstrap intervals (resampled with replacement at the `match_id` cluster level with fixed seed 123) hold Model 2 baseline predictions and Empirical Bayes hyperparameters ($\mu, \tau^2$) fixed. They evaluate sampling variation in player outcomes given match clustering, not full posterior predictive distributions.
+3. **Unadjusted Multiple Testing:** Significance flags reflect individual unadjusted 95% percentile confidence intervals. Across 456 eligible batters, individual tests are subject to family-wise false discovery risk.
+4. **Exposure-Dependent Volume vs. Consistency:** Cumulative Shrunk RAE ($n_p \cdot \theta_p^*$) scales with balls faced. It reflects cumulative historical scoring value added above baseline, not a standardized rate differential, game-to-game consistency metric, or failure-avoidance index.
+5. **Scoring Residual Framework Boundaries:** The scoring residual framework measures runs scored above or below a phase/over-based expectation. It does not fully capture wicket preservation, match-win probability, or tactical value under collapse conditions.
+6. **Innings-Level Qualification Scope:** Positive innings frequency evaluates strictly qualifying pressure match-innings where a batter faced $\ge 1$ clean pressure delivery; it does not represent the proportion of all career matches in which a player performed well.
+7. **No Causal Inference:** The models identify empirical associations within observed historical states. They do not predict future performance, model opposition counter-strategies, or establish players' tactical intentions.
+8. **Unavailable Match Context:** Run Chase Pressure ($F_2$) and Required Run Rate ($F_3$) could not be included due to missing delivery-level target scoreboards in the source data. Bowler analysis is restricted to clean containment due to unrecorded extras penalty runs.
+9. **Population Universe Accounting:** The source universe comprises 1,217 registered tournament squad members, 1,082 starting XI players, and 2 registered substitute match batters (Player IDs 36153 and 39444), yielding 1,084 total unique on-field match participants and 133 registered squad members who did not participate in the analyzed matches.
 
 ---
 

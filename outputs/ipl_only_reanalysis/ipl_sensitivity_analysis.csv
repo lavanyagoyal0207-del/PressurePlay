@@ -1,0 +1,8 @@
+exposure_cutoff,total_qualifying_batters,kohli_clean_balls,kohli_shrunk_rae,kohli_rank_shrunk_rae,kohli_percentile_shrunk_rae,kohli_rank_shrunk_rate,kohli_rank_positive_innings_pct
+n_p >= 1,326,404,-91.95,311,4.6,171,158
+n_p >= 10,251,404,-91.95,236,6.0,127,150
+n_p >= 30,175,404,-91.95,160,8.6,101,132
+n_p >= 50,149,404,-91.95,134,10.1,92,116
+n_p >= 100,103,404,-91.95,88,14.6,72,88
+n_p >= 200,67,404,-91.95,53,20.9,50,61
+n_p >= 300,49,404,-91.95,35,28.6,39,48

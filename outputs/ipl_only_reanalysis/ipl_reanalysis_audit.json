@@ -1,0 +1,91 @@
+{
+  "analysis_type": "IPL-Only Independent Pressure Reanalysis",
+  "timestamp_utc": "2026-11-17T09:03:40Z",
+  "ipl_competitions": [
+    {
+      "comp_id": 1358,
+      "comp_name": "IPL 2022",
+      "season": "2022"
+    },
+    {
+      "comp_id": 1715,
+      "comp_name": "IPL 2023",
+      "season": "2023"
+    },
+    {
+      "comp_id": 2193,
+      "comp_name": "IPL 2024",
+      "season": "2024"
+    },
+    {
+      "comp_id": 2725,
+      "comp_name": "IPL 2025",
+      "season": "2025"
+    },
+    {
+      "comp_id": 3298,
+      "comp_name": "IPL 2026",
+      "season": "2026"
+    }
+  ],
+  "seasons_covered": [
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+  ],
+  "matches_count": 371,
+  "match_date_range": [
+    "2022-03-26",
+    "2026-05-31"
+  ],
+  "deliveries_accounting": {
+    "total_deliveries": 87687,
+    "clean_deliveries": 82458,
+    "non_clean_deliveries": 5229,
+    "clean_non_pressure_training_corpus": 42074,
+    "clean_pressure_evaluation_corpus": 40384,
+    "f1_only_clean": 35976,
+    "f4_only_clean": 2380,
+    "overlap_f1_f4_clean": 2028
+  },
+  "model_2_baseline": {
+    "specification": "Overid (1..20) x Innings (1..4) unconstrained empirical means",
+    "empirical_cells_count": 42,
+    "global_mean_scoring_rate": 1.5557
+  },
+  "shrinkage_hyperparameters_ipl": {
+    "method": "DerSimonian-Laird Empirical Bayes",
+    "eligible_batters_k": 251,
+    "pooled_residual_variance_sigma2": 3.0499,
+    "prior_mean_mu": -0.1746,
+    "prior_tau2": 0.039385,
+    "prior_tau": 0.1985
+  },
+  "virat_kohli_profile": {
+    "player_id": 47,
+    "player_name": "Virat Kohli",
+    "clean_pressure_balls": 404,
+    "observed_runs": 524,
+    "expected_runs_ipl": 620.06,
+    "raw_rae_ipl": -96.06,
+    "clean_scoring_rate": 1.297,
+    "expected_scoring_rate": 1.5348,
+    "raw_rate_differential": -0.2378,
+    "shrinkage_weight_B_p": 0.1608,
+    "shrunk_rate_differential": -0.2276,
+    "shrunk_rae_ipl": -91.95,
+    "rank_overall": 311,
+    "total_batters_overall": 326,
+    "rank_qualified_30": 160,
+    "total_batters_qualified_30": 175,
+    "rank_moderate_100": 88,
+    "total_batters_moderate_100": 103,
+    "qualifying_pressure_innings": 30,
+    "positive_innings_count": 4,
+    "positive_innings_pct": 13.3,
+    "median_innings_rae": -1.73,
+    "innings_rae_sd": 6.89
+  }
+}

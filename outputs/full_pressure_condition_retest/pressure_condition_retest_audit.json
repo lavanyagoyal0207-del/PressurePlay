@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "analysis_title": "Full Pressure Condition Retest: Independent IPL Evaluation (2022-2026)",
+    "timestamp_utc": "2026-11-17T17:12:51Z",
+    "git_commit": "c882a366da81edf4355323c5d255302f193615f1",
+    "eval_player": {
+      "player_id": 47,
+      "player_name": "Virat Kohli",
+      "ipl_total_balls_faced": 2167,
+      "ipl_clean_balls_faced": 2064
+    }
+  },
+  "condition_summary": {
+    "total_candidate_conditions": 40,
+    "category_a_fully_operationalised": 32,
+    "category_b_approximated": 7,
+    "category_c_unobservable": 1,
+    "total_operationalised": 39
+  },
+  "ipl_corpus_integrity": {
+    "total_deliveries": 87687,
+    "clean_deliveries": 82458,
+    "unique_matches": 367,
+    "seasons": [
+      "2022",
+      "2023",
+      "2024",
+      "2025",
+      "2026"
+    ]
+  },
+  "baseline_reconciliation": {
+    "f1_union_f4_balls": 404,
+    "f1_union_f4_obs_runs": 524,
+    "f1_union_f4_exp_runs": 620.05,
+    "f1_union_f4_raw_rae": -96.05,
+    "f1_union_f4_shrunk_rae": -91.95
+  },
+  "output_files": [
+    "original_pressure_conditions_inventory.csv",
+    "condition_operationalisation_audit.csv",
+    "kohli_condition_results.csv",
+    "kohli_innings_condition_results.csv",
+    "all_batter_condition_leaderboards.csv",
+    "kohli_exposure_sensitivity.csv",
+    "condition_overlap_analysis.csv",
+    "condition_correlation_analysis.csv",
+    "pressure_condition_retest_methodology.md",
+    "pressure_condition_retest_summary.md",
+    "pressure_condition_retest_audit.json",
+    "run_pressure_condition_retest.py"
+  ]
+}

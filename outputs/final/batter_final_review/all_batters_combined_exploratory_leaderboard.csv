@@ -1,0 +1,240 @@
+rank,player_name,ipl_contribution,t20i_contribution,combined_score,pressure_balls,ipl_pressure_balls,t20i_pressure_balls,format_exposure_type
+1,Suryakumar Yadav,33.14,147.15,180.29,1778,909,869,Dual-Format (IPL & T20I)
+2,Tim David,-23.43,112.79,89.36,836,391,445,Dual-Format (IPL & T20I)
+3,Rajat Patidar,75.77,0.0,75.77,601,601,0,IPL Heavily Weighted
+4,Abhishek Sharma,-8.94,64.22,55.28,383,165,218,Dual-Format (IPL & T20I)
+5,Ishan Kishan,14.37,40.75,55.12,729,369,360,Dual-Format (IPL & T20I)
+6,Glenn Maxwell,0.62,46.39,47.01,636,288,348,Dual-Format (IPL & T20I)
+7,Harry Brook,-28.57,68.0,39.43,548,90,458,Dual-Format (IPL & T20I)
+8,Heinrich Klaasen,49.33,-13.71,35.62,985,810,175,Dual-Format (IPL & T20I)
+9,Andre Russell,4.08,30.46,34.54,618,486,132,Dual-Format (IPL & T20I)
+10,Tom Banton,0.0,29.39,29.39,193,0,193,T20I Heavily Weighted
+11,Shreyas Iyer,7.89,12.56,20.45,1096,678,418,Dual-Format (IPL & T20I)
+12,Asif Khan,0.0,7.73,7.73,146,0,146,T20I Heavily Weighted
+13,Mitchell Owen,-0.19,5.15,4.96,116,1,115,T20I Heavily Weighted
+14,Josh Inglis,-22.15,27.01,4.86,444,134,310,Dual-Format (IPL & T20I)
+15,Naman Dhir,-4.97,7.99,3.02,355,282,73,Dual-Format (IPL & T20I)
+16,Ashutosh Sharma,3.59,-0.97,2.62,271,264,7,IPL Heavily Weighted
+17,Mark Chapman,0.0,1.89,1.89,616,0,616,T20I Heavily Weighted
+18,Mahipal Lomror,0.08,0.0,0.08,113,113,0,IPL Heavily Weighted
+19,Aniket Verma,-2.42,0.0,-2.42,148,148,0,IPL Heavily Weighted
+20,Phil Salt,3.84,-6.33,-2.49,296,113,183,Dual-Format (IPL & T20I)
+21,Donovan Ferreira,-3.73,0.79,-2.94,259,127,132,Dual-Format (IPL & T20I)
+22,Bevon Jacobs,0.0,-3.79,-3.79,149,0,149,T20I Heavily Weighted
+23,George Linde,-3.46,-1.38,-4.84,119,16,103,T20I Heavily Weighted
+24,Dewald Brevis,-23.37,18.41,-4.96,452,276,176,Dual-Format (IPL & T20I)
+25,Andrew Balbirnie,0.0,-4.99,-4.99,114,0,114,T20I Heavily Weighted
+26,Marcus Stoinis,-1.14,-5.93,-7.07,883,581,302,Dual-Format (IPL & T20I)
+27,Rovman Powell,-51.57,44.42,-7.15,1151,314,837,Dual-Format (IPL & T20I)
+28,Reeza Hendricks,0.0,-7.49,-7.49,344,0,344,T20I Heavily Weighted
+29,Dinesh Karthik,2.52,-10.39,-7.87,509,358,151,Dual-Format (IPL & T20I)
+30,Prabhsimran Singh,-7.63,-0.45,-8.08,321,319,2,IPL Heavily Weighted
+31,Tanzid Hasan,0.0,-8.61,-8.61,128,0,128,T20I Heavily Weighted
+32,Cooper Connolly,-1.47,-7.15,-8.62,117,81,36,Dual-Format (IPL & T20I)
+33,Shashank Singh,-10.12,0.0,-10.12,421,421,0,IPL Heavily Weighted
+34,Riyan Parag,2.14,-12.54,-10.4,716,659,57,Dual-Format (IPL & T20I)
+35,Kusal Perera,0.0,-10.74,-10.74,191,0,191,T20I Heavily Weighted
+36,Babar Azam,0.0,-11.27,-11.27,299,0,299,T20I Heavily Weighted
+37,David Miller,-63.5,52.13,-11.37,826,539,287,Dual-Format (IPL & T20I)
+38,Ben Duckett,0.0,-11.53,-11.53,160,0,160,T20I Heavily Weighted
+39,Dawid Malan,0.0,-11.96,-11.96,209,0,209,T20I Heavily Weighted
+40,Kamil Mishara,0.0,-12.62,-12.62,104,0,104,T20I Heavily Weighted
+41,Ijaz Ahmadzai,0.0,-13.46,-13.46,107,0,107,T20I Heavily Weighted
+42,Jacob Bethell,-5.66,-8.53,-14.19,199,20,179,T20I Heavily Weighted
+43,Kyle Mayers,-2.12,-13.81,-15.93,102,13,89,T20I Heavily Weighted
+44,Shubham Dubey,-16.45,0.0,-16.45,116,116,0,IPL Heavily Weighted
+45,Yashasvi Jaiswal,-12.77,-4.69,-17.46,253,199,54,Dual-Format (IPL & T20I)
+46,Scott Edwards,0.0,-18.35,-18.35,142,0,142,T20I Heavily Weighted
+47,Sherfane Rutherford,-28.93,10.51,-18.42,518,189,329,Dual-Format (IPL & T20I)
+48,Gudakesh Motie,0.0,-18.71,-18.71,127,0,127,T20I Heavily Weighted
+49,Patrick Cummins,-7.8,-11.41,-19.21,209,165,44,Dual-Format (IPL & T20I)
+50,Sameer Rizvi,-20.22,0.0,-20.22,231,231,0,IPL Heavily Weighted
+51,Jonny Bairstow,-18.77,-1.93,-20.7,233,98,135,Dual-Format (IPL & T20I)
+52,Yasir Ali Chowdhury,0.0,-20.79,-20.79,109,0,109,T20I Heavily Weighted
+53,Sai Sudharsan,-21.08,0.0,-21.08,414,414,0,IPL Heavily Weighted
+54,Rachin Ravindra,-9.28,-11.84,-21.12,185,86,99,Dual-Format (IPL & T20I)
+55,Angelo Mathews,0.0,-21.77,-21.77,127,0,127,T20I Heavily Weighted
+56,Chris Jordan,-6.2,-16.25,-22.45,114,19,95,T20I Heavily Weighted
+57,Sunil Narine,-23.01,0.0,-23.01,100,100,0,IPL Heavily Weighted
+58,Matthew Renshaw,0.0,-23.37,-23.37,100,0,100,T20I Heavily Weighted
+59,Venkatesh Iyer,-22.31,-1.41,-23.72,548,531,17,IPL Heavily Weighted
+60,Arafat Minhas,0.0,-23.79,-23.79,121,0,121,T20I Heavily Weighted
+61,Saim Ayub,0.0,-23.95,-23.95,169,0,169,T20I Heavily Weighted
+62,Aaron Hardie,0.0,-24.11,-24.11,103,0,103,T20I Heavily Weighted
+63,Ramandeep Singh,-27.81,3.61,-24.2,212,152,60,Dual-Format (IPL & T20I)
+64,Rizwan CP,0.0,-24.37,-24.37,100,0,100,T20I Heavily Weighted
+65,Jamie Overton,-10.34,-14.22,-24.56,137,88,49,Dual-Format (IPL & T20I)
+66,Janith Liyanage,0.0,-24.59,-24.59,106,0,106,T20I Heavily Weighted
+67,Sanju Samson,6.89,-31.82,-24.93,720,496,224,Dual-Format (IPL & T20I)
+68,Brandon King,0.0,-25.07,-25.07,125,0,125,T20I Heavily Weighted
+69,Faheem Ashraf,0.0,-25.13,-25.13,161,0,161,T20I Heavily Weighted
+70,Shakib Al Hasan,0.0,-25.94,-25.94,246,0,246,T20I Heavily Weighted
+71,Kane Williamson,-6.86,-19.32,-26.18,146,28,118,T20I Heavily Weighted
+72,Mohammad Ishaq,0.0,-26.51,-26.51,106,0,106,T20I Heavily Weighted
+73,Mayank Agarwal,-26.66,0.0,-26.66,130,130,0,IPL Heavily Weighted
+74,Rilee Rossouw,-25.61,-1.3,-26.91,103,98,5,IPL Heavily Weighted
+75,Jimmy Neesham,-3.31,-23.73,-27.04,350,15,335,T20I Heavily Weighted
+76,Dhananjaya de Silva,0.0,-27.12,-27.12,126,0,126,T20I Heavily Weighted
+77,Jos Buttler,-13.55,-14.11,-27.66,596,389,207,Dual-Format (IPL & T20I)
+78,Brad Evans,0.0,-27.73,-27.73,101,0,101,T20I Heavily Weighted
+79,Hasan Nawaz,0.0,-27.91,-27.91,158,0,158,T20I Heavily Weighted
+80,Travis Head,-21.85,-6.19,-28.04,160,108,52,Dual-Format (IPL & T20I)
+81,Sadeera Samarawickrama,0.0,-28.12,-28.12,145,0,145,T20I Heavily Weighted
+82,Rohit Sharma,-45.41,16.9,-28.51,321,182,139,Dual-Format (IPL & T20I)
+83,Michael Bracewell,-2.91,-25.9,-28.81,222,15,207,T20I Heavily Weighted
+84,Kartik Sharma,-29.07,0.0,-29.07,193,193,0,IPL Heavily Weighted
+85,Usman Khan,0.0,-29.46,-29.46,228,0,228,T20I Heavily Weighted
+86,Parvez Emon,0.0,-29.64,-29.64,172,0,172,T20I Heavily Weighted
+87,Odean Smith,-15.46,-14.98,-30.44,113,35,78,Dual-Format (IPL & T20I)
+88,Sahan Arachchige,0.0,-30.89,-30.89,147,0,147,T20I Heavily Weighted
+89,Fakhar Zaman,0.0,-31.18,-31.18,419,0,419,T20I Heavily Weighted
+90,Tony Munyonga,0.0,-31.35,-31.35,123,0,123,T20I Heavily Weighted
+91,Mohammad Haris,0.0,-31.68,-31.68,162,0,162,T20I Heavily Weighted
+92,George Dockrell,0.0,-31.89,-31.89,370,0,370,T20I Heavily Weighted
+93,Qasim Akram,0.0,-31.96,-31.96,102,0,102,T20I Heavily Weighted
+94,Shadab Khan,0.0,-32.48,-32.48,276,0,276,T20I Heavily Weighted
+95,Sam Billings,-25.37,-7.17,-32.54,143,107,36,Dual-Format (IPL & T20I)
+96,Tadiwanashe Marumani,0.0,-32.57,-32.57,137,0,137,T20I Heavily Weighted
+97,Quinton de Kock,-20.88,-12.18,-33.06,203,142,61,Dual-Format (IPL & T20I)
+98,Romario Shepherd,-8.89,-24.28,-33.17,534,108,426,Dual-Format (IPL & T20I)
+99,Marco Jansen,-32.05,-1.61,-33.66,208,109,99,Dual-Format (IPL & T20I)
+100,Abbas Afridi,0.0,-33.69,-33.69,103,0,103,T20I Heavily Weighted
+101,Matthew Wade,-23.5,-10.33,-33.83,263,69,194,Dual-Format (IPL & T20I)
+102,Tashinga Musekiwa,0.0,-34.64,-34.64,172,0,172,T20I Heavily Weighted
+103,Shubman Gill,-8.68,-26.07,-34.75,550,459,91,Dual-Format (IPL & T20I)
+104,Sean Williams,0.0,-34.76,-34.76,126,0,126,T20I Heavily Weighted
+105,Rahmanullah Gurbaz,-17.29,-18.04,-35.33,194,117,77,Dual-Format (IPL & T20I)
+106,Luke Jongwe,0.0,-35.81,-35.81,108,0,108,T20I Heavily Weighted
+107,Dunith Wellalage,0.0,-35.95,-35.95,134,0,134,T20I Heavily Weighted
+108,Kieron Pollard,-25.25,-10.85,-36.1,145,88,57,Dual-Format (IPL & T20I)
+109,Sarfaraz Khan,-36.25,0.0,-36.25,131,131,0,IPL Heavily Weighted
+110,Shaheen Afridi,0.0,-36.36,-36.36,158,0,158,T20I Heavily Weighted
+111,Jason Holder,-19.3,-17.13,-36.43,304,63,241,Dual-Format (IPL & T20I)
+112,Aman Khan,-36.54,0.0,-36.54,102,102,0,IPL Heavily Weighted
+113,Muhammad Irfan,0.0,-36.67,-36.67,153,0,153,T20I Heavily Weighted
+114,Corbin Bosch,-12.6,-24.42,-37.02,113,52,61,Dual-Format (IPL & T20I)
+115,Kusal Mendis,-0.95,-36.13,-37.08,349,10,339,T20I Heavily Weighted
+116,Bas de Leede,0.0,-37.28,-37.28,147,0,147,T20I Heavily Weighted
+117,Jofra Archer,-25.92,-11.43,-37.35,125,89,36,Dual-Format (IPL & T20I)
+118,William Jacks,-13.07,-24.68,-37.75,211,151,60,Dual-Format (IPL & T20I)
+119,Kagiso Rabada,-30.32,-7.68,-38.0,115,81,34,Dual-Format (IPL & T20I)
+120,Mohammad Rishad Hossain,0.0,-38.14,-38.14,143,0,143,T20I Heavily Weighted
+121,Nicholas Pooran,-8.72,-29.64,-38.36,1087,608,479,Dual-Format (IPL & T20I)
+122,Gulbadin Naib,-3.21,-35.21,-38.42,116,15,101,T20I Heavily Weighted
+123,Imad Wasim,0.0,-38.63,-38.63,150,0,150,T20I Heavily Weighted
+124,Mohammad Saif Hassan,0.0,-38.96,-38.96,124,0,124,T20I Heavily Weighted
+125,Rassie van der Dussen,-2.14,-36.86,-39.0,252,9,243,T20I Heavily Weighted
+126,Rashid Khan,-12.11,-27.75,-39.86,389,166,223,Dual-Format (IPL & T20I)
+127,Dion Myers,0.0,-40.43,-40.43,128,0,128,T20I Heavily Weighted
+128,Harshit Rana,-14.58,-26.34,-40.92,135,47,88,Dual-Format (IPL & T20I)
+129,Jitesh Sharma,-42.09,1.08,-41.01,624,503,121,Dual-Format (IPL & T20I)
+130,Nizakat Khan,0.0,-41.24,-41.24,121,0,121,T20I Heavily Weighted
+131,Adil Rashid,-2.62,-38.67,-41.29,105,15,90,T20I Heavily Weighted
+132,Tim Seifert,-1.48,-40.25,-41.73,129,7,122,T20I Heavily Weighted
+133,Devon Conway,-16.65,-25.35,-42.0,229,118,111,Dual-Format (IPL & T20I)
+134,Basil Hameed,0.0,-42.01,-42.01,127,0,127,T20I Heavily Weighted
+135,Akeal Hosein,-2.56,-39.72,-42.28,207,13,194,T20I Heavily Weighted
+136,Rahul Tripathi,-42.16,-0.72,-42.88,256,253,3,IPL Heavily Weighted
+137,Ravichandran Ashwin,-37.48,-6.16,-43.64,156,130,26,IPL Heavily Weighted
+138,M Shahrukh Khan,-44.01,0.0,-44.01,273,273,0,IPL Heavily Weighted
+139,Liton Das,0.0,-44.19,-44.19,314,0,314,T20I Heavily Weighted
+140,Faf du Plessis,-44.72,0.0,-44.72,306,306,0,IPL Heavily Weighted
+141,Yasim Murtaza,0.0,-45.13,-45.13,156,0,156,T20I Heavily Weighted
+142,Matthew Short,-27.83,-18.36,-46.19,170,82,88,Dual-Format (IPL & T20I)
+143,Shai Hope,-12.67,-33.85,-46.52,342,62,280,Dual-Format (IPL & T20I)
+144,Dhruv Jurel,-39.04,-7.78,-46.82,401,379,22,IPL Heavily Weighted
+145,Alzarri Joseph,-5.92,-41.35,-47.27,118,17,101,T20I Heavily Weighted
+146,Tanzim Sakib,0.0,-47.42,-47.42,150,0,150,T20I Heavily Weighted
+147,Harpreet Brar,-47.85,0.0,-47.85,131,131,0,IPL Heavily Weighted
+148,Rahul Chopra,0.0,-48.44,-48.44,159,0,159,T20I Heavily Weighted
+149,Mehidy Hasan Miraz,0.0,-48.55,-48.55,174,0,174,T20I Heavily Weighted
+150,Cameron Green,-65.7,16.11,-49.59,633,341,292,Dual-Format (IPL & T20I)
+151,Mark Adair,0.0,-49.6,-49.6,235,0,235,T20I Heavily Weighted
+152,Arshdeep Singh,-20.61,-29.21,-49.82,116,41,75,Dual-Format (IPL & T20I)
+153,Mohammad Nawaz,0.0,-50.03,-50.03,327,0,327,T20I Heavily Weighted
+154,Liam Livingstone,-27.24,-22.97,-50.21,727,476,251,Dual-Format (IPL & T20I)
+155,Nazmul Hossain Shanto,0.0,-50.31,-50.31,186,0,186,T20I Heavily Weighted
+156,Nurul Hasan,0.0,-50.45,-50.45,175,0,175,T20I Heavily Weighted
+157,Ajinkya Rahane,-51.55,0.0,-51.55,269,269,0,IPL Heavily Weighted
+158,Mohammad Rizwan,0.0,-51.61,-51.61,309,0,309,T20I Heavily Weighted
+159,Bhanuka Rajapaksa,-13.6,-38.31,-51.91,206,37,169,Dual-Format (IPL & T20I)
+160,Noor Ahmad,-33.98,-19.09,-53.07,109,57,52,Dual-Format (IPL & T20I)
+161,Mohammad Mahmudullah,0.0,-53.71,-53.71,234,0,234,T20I Heavily Weighted
+162,Shikhar Dhawan,-53.92,0.0,-53.92,172,172,0,IPL Heavily Weighted
+163,Abishek Porel,-54.25,0.0,-54.25,202,202,0,IPL Heavily Weighted
+164,Wellington Masakadza,0.0,-54.74,-54.74,140,0,140,T20I Heavily Weighted
+165,David Warner,-53.24,-1.75,-54.99,288,280,8,IPL Heavily Weighted
+166,Shardul Thakur,-55.62,0.0,-55.62,179,179,0,IPL Heavily Weighted
+167,Ruturaj Gaikwad,-62.65,6.49,-56.16,491,389,102,Dual-Format (IPL & T20I)
+168,Mitchell Marsh,-32.1,-24.26,-56.36,363,155,208,Dual-Format (IPL & T20I)
+169,Moeen Ali,-69.59,12.89,-56.7,500,206,294,Dual-Format (IPL & T20I)
+170,Harshal Patel,-47.01,-9.92,-56.93,133,89,44,Dual-Format (IPL & T20I)
+171,Nitish Reddy,-79.24,21.38,-57.86,517,413,104,Dual-Format (IPL & T20I)
+172,Glenn Phillips,-7.89,-50.48,-58.37,803,28,775,T20I Heavily Weighted
+173,Vijay Shankar,-58.57,0.0,-58.57,205,205,0,IPL Heavily Weighted
+174,Angkrish Raghuvanshi,-59.66,0.0,-59.66,277,277,0,IPL Heavily Weighted
+175,Najibullah Zadran,0.0,-59.94,-59.94,193,0,193,T20I Heavily Weighted
+176,Gareth Delany,0.0,-61.02,-61.02,249,0,249,T20I Heavily Weighted
+177,Chamika Karunaratne,0.0,-61.18,-61.18,114,0,114,T20I Heavily Weighted
+178,Abdul Samad,-63.44,0.0,-63.44,346,346,0,IPL Heavily Weighted
+179,Khushdil Shah,0.0,-64.79,-64.79,153,0,153,T20I Heavily Weighted
+180,Sediqullah Atal,-2.14,-62.81,-64.95,299,15,284,T20I Heavily Weighted
+181,Daryl Mitchell,-45.44,-19.67,-65.11,701,152,549,Dual-Format (IPL & T20I)
+182,Abhinav Manohar,-65.97,0.0,-65.97,213,213,0,IPL Heavily Weighted
+183,Dasun Shanaka,-12.65,-54.24,-66.89,597,61,536,Dual-Format (IPL & T20I)
+184,Lalit Yadav,-67.2,0.0,-67.2,193,193,0,IPL Heavily Weighted
+185,Rahul Tewatia,-68.26,0.0,-68.26,306,306,0,IPL Heavily Weighted
+186,Babar Hayat,0.0,-69.29,-69.29,229,0,229,T20I Heavily Weighted
+187,Lorcan Tucker,0.0,-71.64,-71.64,305,0,305,T20I Heavily Weighted
+188,Shamim Hossain,0.0,-72.87,-72.87,317,0,317,T20I Heavily Weighted
+189,Nehal Wadhera,-44.31,-28.79,-73.1,562,461,101,Dual-Format (IPL & T20I)
+190,Iftikhar Ahmed,0.0,-73.24,-73.24,339,0,339,T20I Heavily Weighted
+191,Azmatullah Omarzai,-14.83,-58.45,-73.28,508,72,436,Dual-Format (IPL & T20I)
+192,Afif Hossain,0.0,-73.38,-73.38,298,0,298,T20I Heavily Weighted
+193,Ambati Rayudu,-73.86,0.0,-73.86,283,283,0,IPL Heavily Weighted
+194,Manish Pandey,-73.87,0.0,-73.87,254,254,0,IPL Heavily Weighted
+195,Washington Sundar,-42.46,-32.53,-74.99,428,273,155,Dual-Format (IPL & T20I)
+196,Brian Bennett,0.0,-76.56,-76.56,232,0,232,T20I Heavily Weighted
+197,Kamindu Mendis,-11.69,-66.08,-77.77,448,65,383,Dual-Format (IPL & T20I)
+198,Rishabh Pant,-61.0,-17.1,-78.1,669,487,182,Dual-Format (IPL & T20I)
+199,Roston Chase,0.0,-80.06,-80.06,333,0,333,T20I Heavily Weighted
+200,Wanindu Hasaranga,-35.71,-44.37,-80.08,389,77,312,Dual-Format (IPL & T20I)
+201,Devdutt Padikkal,-81.41,0.0,-81.41,208,208,0,IPL Heavily Weighted
+202,Jaker Ali Anik,0.0,-82.81,-82.81,425,0,425,T20I Heavily Weighted
+203,Shimron Hetmyer,-64.27,-20.23,-84.5,666,344,322,Dual-Format (IPL & T20I)
+204,Pathum Nissanka,-7.04,-78.14,-85.18,286,34,252,Dual-Format (IPL & T20I)
+205,Bhuvneshwar Kumar,-81.46,-4.77,-86.23,151,137,14,IPL Heavily Weighted
+206,Charith Asalanka,0.0,-89.88,-89.88,502,0,502,T20I Heavily Weighted
+207,Mahendra Singh Dhoni,-90.36,0.0,-90.36,377,377,0,IPL Heavily Weighted
+208,Wesley Madhevere,0.0,-90.97,-90.97,257,0,257,T20I Heavily Weighted
+209,Shivam Dube,-122.17,27.99,-94.18,1177,832,345,Dual-Format (IPL & T20I)
+210,Mohammad Nabi,-6.68,-92.93,-99.61,511,27,484,T20I Heavily Weighted
+211,Mahedi Hasan,0.0,-101.28,-101.28,246,0,246,T20I Heavily Weighted
+212,Deepak Hooda,-89.04,-12.8,-101.84,489,367,122,Dual-Format (IPL & T20I)
+213,Curtis Campher,0.0,-102.46,-102.46,460,0,460,T20I Heavily Weighted
+214,Mitchell Santner,-28.52,-75.21,-103.73,434,72,362,Dual-Format (IPL & T20I)
+215,Darwish Rasooli,0.0,-106.98,-106.98,341,0,341,T20I Heavily Weighted
+216,Maheesh Theekshana,-15.44,-91.66,-107.1,173,32,141,Dual-Format (IPL & T20I)
+217,Karim Janat,0.0,-107.14,-107.14,253,0,253,T20I Heavily Weighted
+218,Nitish Rana,-109.18,0.0,-109.18,525,525,0,IPL Heavily Weighted
+219,Tristan Stubbs,-103.96,-6.58,-110.54,856,498,358,Dual-Format (IPL & T20I)
+220,Sikandar Raza,-19.75,-95.37,-115.12,780,112,668,Dual-Format (IPL & T20I)
+221,Shahbaz Ahmed,-117.24,0.0,-117.24,374,374,0,IPL Heavily Weighted
+222,Clive Madande,0.0,-118.53,-118.53,277,0,277,T20I Heavily Weighted
+223,Kuldeep Yadav,-111.02,-10.62,-121.64,184,162,22,IPL Heavily Weighted
+224,Virat Kohli,-91.95,-32.7,-124.65,522,404,118,Dual-Format (IPL & T20I)
+225,Ayush Badoni,-126.02,-0.39,-126.41,687,625,62,Dual-Format (IPL & T20I)
+226,Rinku Singh,-121.19,-6.12,-127.31,1029,711,318,Dual-Format (IPL & T20I)
+227,Ibrahim Zadran,0.0,-129.44,-129.44,358,0,358,T20I Heavily Weighted
+228,Krunal Pandya,-141.3,0.0,-141.3,517,517,0,IPL Heavily Weighted
+229,Lokesh Rahul,-135.86,-5.47,-141.33,598,545,53,Dual-Format (IPL & T20I)
+230,Sam Curran,-95.15,-47.13,-142.28,643,387,256,Dual-Format (IPL & T20I)
+231,Aiden Markram,-133.22,-10.97,-144.19,781,504,277,Dual-Format (IPL & T20I)
+232,Harry Tector,0.0,-146.5,-146.5,547,0,547,T20I Heavily Weighted
+233,Ryan Burl,0.0,-148.15,-148.15,617,0,617,T20I Heavily Weighted
+234,Towhid Hridoy,0.0,-158.15,-158.15,662,0,662,T20I Heavily Weighted
+235,Salman Agha,0.0,-172.44,-172.44,500,0,500,T20I Heavily Weighted
+236,Ravindra Jadeja,-178.25,-27.9,-206.15,805,685,120,Dual-Format (IPL & T20I)
+237,Namboori Tilak Varma,-115.83,-100.57,-216.4,1828,982,846,Dual-Format (IPL & T20I)
+238,Axar Patel,-137.89,-81.45,-219.34,985,603,382,Dual-Format (IPL & T20I)
+239,Hardik Pandya,-183.46,-64.19,-247.65,1342,709,633,Dual-Format (IPL & T20I)

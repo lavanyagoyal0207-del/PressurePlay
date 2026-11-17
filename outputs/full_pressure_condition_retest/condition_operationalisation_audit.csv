@@ -1,0 +1,41 @@
+condition_id,condition_name,family,category,operational_status,total_ipl_deliveries,total_ipl_clean_balls,unique_qualifying_matches,unique_qualifying_innings,temporal_orientation,start_event,end_event,approximation_details
+C01,f1_primary,F1,A,Operationalised (Exact),40376,38004,312,435,Retrospective,W2 dismissal,Innings end,None
+C02,f1_alt1a_60b,F1,A,Operationalised (Exact),26661,25379,312,435,Prospective window,W2 dismissal,60th legal ball or innings end,None
+C03,f1_alt1a_complete_60,F1,A,Operationalised (Exact),23811,22699,289,383,Prospective window,W2 dismissal,Exactly 60th legal ball,None
+C04,f1_alt1a_truncated,F1,A,Operationalised (Exact),761,718,18,19,Retrospective termination,W2 dismissal,Premature innings end,None
+C05,f1_alt1b_middle_cut,F1,A,Operationalised (Exact),28545,27193,312,435,Retrospective cutoff,W2 dismissal,Over 15 completion,None
+C06,f1_alt1c_w2_le_6,F1,A,Operationalised (Exact),32147,30286,263,328,Retrospective,W2 dismissal,Innings end,None
+C07,f1_alt1c_w2_le_8,F1,A,Operationalised (Exact),40376,38004,312,435,Retrospective,W2 dismissal,Innings end,None
+C08,f1_alt1c_w2_le_10,F1,A,Operationalised (Exact),47578,44750,344,543,Retrospective,W2 dismissal,Innings end,None
+C09,f1_powerplay,F1,A,Operationalised (Exact),5266,5019,263,328,Retrospective,W2 dismissal,Over 6 completion,None
+C10,top3_collapse_w3_le_6,F1,A,Operationalised (Exact),14114,13312,141,152,Retrospective,W3 dismissal,Innings end,None
+C11,top3_collapse_w3_le_8,F1,A,Operationalised (Exact),20094,18926,200,230,Retrospective,W3 dismissal,Innings end,None
+C12,top4_collapse_w4_le_10,F1,A,Operationalised (Exact),12291,11549,152,168,Retrospective,W4 dismissal,Innings end,None
+C13,mo_stagnation_le_20,F1,A,Operationalised (Exact),3507,3356,181,233,Moving lookback,Over 7 start,Over 15 completion,None
+C14,f4_knockout,F4,A,Operationalised (Exact),4667,4408,20,40,Pre-match static,Match ball 1,Match completion,None
+C15,f1_f4_union,F1+F4,A,Operationalised (Exact),42891,40384,313,450,Composite union,Earlier of W2 or ball 1,Innings end,None
+C16,f1_f4_overlap,F1+F4,A,Operationalised (Exact),2152,2028,19,25,Intersection,W2 in playoff,Innings end,None
+C17,super_over,F4,A,Operationalised (Exact),14,13,2,4,Match tie,Super over ball 1,Super over end,None
+C18,knockout_powerplay,F4,A,Operationalised (Exact),1491,1414,20,40,Pre-match phase,Over 1 ball 1,Over 6 completion,None
+C19,knockout_middle,F4,A,Operationalised (Exact),2173,2068,20,40,Pre-match phase,Over 7 ball 1,Over 15 completion,None
+C20,knockout_death,F4,A,Operationalised (Exact),1003,926,19,35,Pre-match phase,Over 16 ball 1,Over 20 completion,None
+C21,death_overs_all,Phase,A,Operationalised (Exact),20042,18321,362,699,Phase boundary,Over 16 ball 1,Innings end,None
+C22,death_overs_inn1,Phase,A,Operationalised (Exact),11385,10395,362,362,Phase boundary,Over 16 ball 1,Innings 1 end,None
+C23,death_overs_inn2,Phase,A,Operationalised (Exact),8657,7926,337,337,Phase boundary,Over 16 ball 1,Innings 2 end,None
+C24,death_wickets_ge_4,Phase,A,Operationalised (Exact),14978,13662,357,589,Dynamic state,Over 16 or 4th wicket,Innings end,None
+C25,death_wickets_ge_6,Phase,A,Operationalised (Exact),7069,6429,305,402,Dynamic state,Over 16 or 6th wicket,Innings end,None
+C26,middle_wickets_ge_3,Phase,A,Operationalised (Exact),19391,18430,351,568,Dynamic state,Over 7 or 3rd wicket,Over 15 completion,None
+C27,middle_wickets_ge_5,Phase,A,Operationalised (Exact),5236,4986,220,252,Dynamic state,Over 7 or 5th wicket,Over 15 completion,None
+C28,powerplay_wickets_ge_2,Phase,A,Operationalised (Exact),4938,4693,258,318,Dynamic state,2nd wicket in PP,Over 6 completion,None
+C29,powerplay_wickets_ge_3,Phase,A,Operationalised (Exact),1637,1555,132,142,Dynamic state,3rd wicket in PP,Over 6 completion,None
+C30,crisis_wickets_ge_7,Phase,A,Operationalised (Exact),4791,4413,254,300,Dynamic state,7th wicket fall,Innings end,None
+C31,chase_general_inn2,F2,A,Operationalised (Exact),42085,39615,363,363,Innings level,Innings 2 ball 1,Innings 2 completion,None
+C32,chase_high_target_ge_180,F2,B,Operationalised (Approximated),20775,19407,172,172,Target approximate,Innings 2 ball 1,Innings 2 completion,Reconstructed from cumulative innings ball-by-ball variables
+C33,chase_steep_target_ge_200,F2,B,Operationalised (Approximated),10763,10031,88,88,Target approximate,Innings 2 ball 1,Innings 2 completion,Reconstructed from cumulative innings ball-by-ball variables
+C34,chase_modest_target_le_150,F2,B,Operationalised (Approximated),8531,8107,81,81,Target approximate,Innings 2 ball 1,Innings 2 completion,Reconstructed from cumulative innings ball-by-ball variables
+C35,chase_death_inn2,F2,A,Operationalised (Exact),8657,7926,337,337,Phase boundary,Over 16 ball 1,Innings 2 completion,None
+C36,chase_close_finish,F2,B,Operationalised (Approximated),2276,2082,227,227,Reconstructed state,Threshold entry,Innings 2 completion,Reconstructed from cumulative innings ball-by-ball variables
+C37,rrr_high_ge_10,F3,B,Operationalised (Approximated),17704,16488,247,247,Reconstructed RRR,RRR >= 10 threshold,RRR drop or inn end,Reconstructed from cumulative innings ball-by-ball variables
+C38,rrr_steep_ge_12,F3,B,Operationalised (Approximated),9008,8285,197,197,Reconstructed RRR,RRR >= 12 threshold,RRR drop or inn end,Reconstructed from cumulative innings ball-by-ball variables
+C39,rrr_extreme_ge_14,F3,B,Operationalised (Approximated),4913,4499,174,174,Reconstructed RRR,RRR >= 14 threshold,RRR drop or inn end,Reconstructed from cumulative innings ball-by-ball variables
+C40,dynamic_wpa_crisis,F3,C,Excluded (Data Unavailable),0,0,0,0,Not operationalisable,N/A,N/A,Live delivery-level win probability models and par scores are absent from competition data pack

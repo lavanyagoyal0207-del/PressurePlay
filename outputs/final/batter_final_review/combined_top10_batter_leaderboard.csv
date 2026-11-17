@@ -1,0 +1,11 @@
+rank,player_name,ipl_contribution,t20i_contribution,combined_score,pressure_balls,ipl_pressure_balls,t20i_pressure_balls,format_exposure_type
+1,Suryakumar Yadav,33.14,147.15,180.29,1778,909,869,Dual-Format (IPL & T20I)
+2,Tim David,-23.43,112.79,89.36,836,391,445,Dual-Format (IPL & T20I)
+3,Rajat Patidar,75.77,0.0,75.77,601,601,0,IPL Heavily Weighted
+4,Abhishek Sharma,-8.94,64.22,55.28,383,165,218,Dual-Format (IPL & T20I)
+5,Ishan Kishan,14.37,40.75,55.12,729,369,360,Dual-Format (IPL & T20I)
+6,Glenn Maxwell,0.62,46.39,47.01,636,288,348,Dual-Format (IPL & T20I)
+7,Harry Brook,-28.57,68.0,39.43,548,90,458,Dual-Format (IPL & T20I)
+8,Heinrich Klaasen,49.33,-13.71,35.62,985,810,175,Dual-Format (IPL & T20I)
+9,Andre Russell,4.08,30.46,34.54,618,486,132,Dual-Format (IPL & T20I)
+10,Tom Banton,0.0,29.39,29.39,193,0,193,T20I Heavily Weighted

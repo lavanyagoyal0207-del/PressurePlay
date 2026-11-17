@@ -77,13 +77,18 @@ Under raw family weights $\text{raw\_w}_1 = 1.0$ and $\text{raw\_w}_4 = 0.5$:
 ### 4.1 Model 2: Overid $\times$ Innings Empirical Baseline
 To evaluate whether a batter overperforms or underperforms, clean delivery run outcomes are compared against an empirical baseline model fitted exclusively on non-pressure clean deliveries:
 
-- **Training Corpus:** Fitted on **91,649 non-pressure clean deliveries** (`f1_primary == False` and `f4_knockout == False`):
-  - Innings 1: 49,576 clean deliveries (overs 1–20)
-  - Innings 2: 42,047 clean deliveries (overs 1–20)
-  - Innings 3 (Super Over): 15 clean deliveries (over 1)
-  - Innings 4 (Super Over): 11 clean deliveries (over 1)
+- **Training Corpus & Denominator:** Fitted on **91,649 total non-pressure clean training deliveries** (`f1_primary == False` and `f4_knockout == False`), comprising **91,623 standard-over non-pressure clean deliveries** and **26 Super Over non-pressure clean deliveries**:
+  - *Standard Overs (Overs 1–20, Innings 1 & 2):* **91,623 standard-over non-pressure clean deliveries** (Innings 1: 49,576; Innings 2: 42,047; IPL: 42,063; T20I: 46,798; Other T20: 2,762).
+  - *Super Overs (Over 1, Innings 3 & 4):* **26 Super Over non-pressure clean deliveries** (Innings 3: 15; Innings 4: 11; IPL: 11; T20I: 8; Other T20: 7).
+  - *Competition Totals:* IPL: **42,074** ($42,063 + 11$); T20I: **46,806** ($46,798 + 8$); Other T20: **2,769** ($2,762 + 7$).
 - **Feature Space:** Discrete interaction of delivery over index (`overid` in 1..20) and match innings (1..4), forming **42 empirical cells** (40 ordinary innings cells plus 2 Super Over cells: `(overid=1, innings=3)` with empirical mean 0.6000 runs, and `(overid=1, innings=4)` with empirical mean 2.7273 runs).
-- **Super Over Support & Fallback:** Exactly 6 clean pressure deliveries occur in Super Over innings 3, mapping directly to cell `(1, 3)` with expectation 0.6000 runs (no fallback to global mean triggered). Because the training data contains only 15 and 11 clean deliveries for innings 3 and 4, Super Over support is sparse, and baseline predictions for Super Over deliveries are substantially less reliable than for standard innings 1 and 2.
+- **Super Over Population Accounting & Support:**
+  - Across the 2022–2026 dataset, there are **38 total Super Over delivery attempts** across 6 matches.
+  - **6 non-clean attempts** (4 wides, 1 other extra, 1 legbye) are excluded by the clean-delivery definition.
+  - Of the **32 clean deliveries** faced by batters, **6 clean deliveries** satisfy the $F_1$ Early-Wicket Collapse condition ($\text{overid}(W_2) \le 8$) in Innings 3; these are excluded from Model 2 baseline training because they are pressure deliveries. Exactly 0 satisfy $F_4$ (zero clean $F_4$-only or $F_1 \cap F_4$ Super Over deliveries).
+  - The remaining **26 clean deliveries** are non-pressure deliveries included in Model 2 training (15 in Innings 3, 11 in Innings 4).
+  - All six clean Super Over F1 flags are retrospective: each is the delivery on which W2 is established. The batter faces that delivery before the second wicket has fallen. A strictly prospective F1 definition would begin only after W2 occurs. The frozen retrospective flags and official model outputs remain unchanged.
+  - Exactly 6 clean pressure deliveries occur in Super Over innings 3, mapping directly to cell `(1, 3)` with expectation 0.6000 runs (no fallback to global mean triggered). Because the training data contains only 15 and 11 clean deliveries for innings 3 and 4, Super Over support is sparse, and baseline predictions for Super Over deliveries are substantially less reliable than for standard innings 1 and 2.
 - **Out-of-Fold 5-Fold Cross-Validation:**
   - Evaluated via 5-fold match-grouped cross-validation to prevent intra-match leakage.
   - Out-of-fold Mean Absolute Error (MAE): **1.4131** runs.
@@ -156,6 +161,8 @@ Bowlers are evaluated on:
 - **Balls per Wicket:** Legal deliveries bowled per credited wicket ($BB_{\text{legal}} / \text{Wickets}$).
 - **Diagnostic Residual:** Clean runs conceded minus expected clean runs under Model 2 baseline. Total runs conceded and official economy are omitted due to unrecorded penalty extras.
 
+*Competition Scope Specification:* Baseline bowler diagnostics ([final_bowler_diagnostics.csv](file:///C:/Users/Lavanya%20Goyal/OneDrive/Documents/rr/outputs/final/final_bowler_diagnostics.csv)) evaluate 600 unique bowlers across the full multi-competition master dataset (141 registered competitions: 5 IPL editions, 134 T20I competitions, 2 mixed-status developmental tournaments, reconciling under ICC regulations and primary board declarations to 371 scheduled IPL matches [367 played, 87,687 deliveries], 483 scheduled T20Is [471 played, 106,582 deliveries], and 29 Other T20 fixtures [29 played, 6,730 deliveries]; 883 scheduled matches, 867 played matches, 16 abandoned matches, 200,999 total deliveries; January 22, 2022 – November 1, 2026). In contrast, the specialized 10-player bowler selection ([final_bowler_top10.md](file:///C:/Users/Lavanya%20Goyal/OneDrive/Documents/rr/outputs/final/final_bowler_top10.md)) evaluates Pareto efficiency strictly across the 5-season IPL competition context (371 scheduled matches, 367 played matches, 87,687 deliveries; March 26, 2022 – May 26, 2026) for IPL-specific pressure-performance analysis under league conditions.
+
 ---
 
 ## 7. Methodological Limitations & Boundary Disclosures
@@ -165,6 +172,9 @@ Bowlers are evaluated on:
 3. **Excluded Pressure Families (F2 & F3):** Run Chase Pressure (F2) and Required Run Rate Pressure (F3) remain excluded due to the absence of reliable delivery-level cumulative scores and target scoreboards.
 4. **Historical vs. Current Form:** All calculations reflect historical performance within the 200,999 delivery dataset. Rankings do not incorporate current player age, recent physical fitness, injuries, auction availability, or roster balance.
 5. **Language Standards:** Measured empirical terminology is maintained throughout; claims of permanent ranking, unassailable superiority, or assured future performance are excluded.
+6. **Scoring Residual Framework Boundaries:** The scoring residual framework measures runs scored above or below a phase/over-based empirical baseline expectation. It does not fully capture wicket preservation, match-win probability, or tactical stabilization value under collapse conditions.
+7. **Innings-Level Qualification Scope:** Positive innings frequency evaluates strictly qualifying pressure match-innings where a batter faced $\ge 1$ clean pressure delivery; it does not represent the proportion of all career matches in which a player performed well. Cumulative Shrunk RAE is a volume-weighted aggregate value-added metric, not a measure of game-to-game reliability or failure avoidance.
+8. **Population Universe Accounting:** The underlying competition universe encompasses 1,217 registered squad members, 1,082 starting XI players, and 2 registered substitute match batters (Player IDs 36153 and 39444), establishing 1,084 total unique on-field match participants and 133 registered squad members who did not participate in the analyzed matches.
 
 ---
 *Technical Methodology Specification for Rajasthan Royals SupeRR Selector Season 2.*

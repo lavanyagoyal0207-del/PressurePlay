@@ -1,7 +1,7 @@
-# Final Bowler Top 10: Validated Pressure Performance Roster
+# Final Bowler Top 10: Validated Pressure-Performance Shortlist
 **Project:** SupeRR Selector Season 2 — Bowler Pressure Framework Finalization  
 **Repository Working Directory:** `C:\Users\Lavanya Goyal\OneDrive\Documents\rr`  
-**Dataset Scope:** IPL Seasons 2022–2026 (371 Scheduled Matches, 367 Played Matches, 87,687 Deliveries)  
+**Dataset Scope:** IPL Seasons 2022–2026 (371 Scheduled Matches, 367 Played Matches, 87,687 Deliveries; March 26, 2022 – May 26, 2026) evaluated specifically for IPL-specific bowler selection, drawn from the overarching 141-competition master dataset (141 registered competitions: 5 IPL editions, 134 T20I competitions, 2 mixed-status developmental tournaments, reconciling under ICC regulations and primary board declarations to 371 scheduled IPL matches [367 played, 87,687 deliveries], 483 scheduled T20Is [471 played, 106,582 deliveries], and 29 Other T20 fixtures [29 played, 6,730 deliveries]; 883 scheduled matches, 867 played matches, 16 abandoned matches, 200,999 total deliveries; January 22, 2022 – November 1, 2026).  
 **Deliverable Document:** [outputs/final/final_bowler_top10.md](file:///C:/Users/Lavanya%20Goyal/OneDrive/Documents/rr/outputs/final/final_bowler_top10.md)  
 **Supporting Reconciliation Directory:** [outputs/bowler_pressure_reanalysis/final_validation/reconciliation](file:///C:/Users/Lavanya%20Goyal/OneDrive/Documents/rr/outputs/bowler_pressure_reanalysis/final_validation/reconciliation)  
 **Status:** Finalized & Validated  
@@ -10,7 +10,7 @@
 
 ## Executive Overview & Final Selection Architecture
 
-This document presents the finalized Top 10 IPL Bowler Pressure Roster for SupeRR Selector Season 2. Bowler performance under pressure is evaluated across two formally defined analytical pressure cohorts:
+This document presents the finalized 10-player bowler selection for SupeRR Selector Season 2. Bowler performance under pressure is evaluated across two formally defined analytical pressure cohorts:
 1. **$C21$ — Death Overs:** Deliveries in overs 16–20 across all match situations.
 2. **$C15$ — Early Collapse $\cup$ Knockout Matches:** The union of deliveries bowled during early-wicket collapses ($F_1$: 2+ wickets down in overs 0–5) and all playoff/knockout match deliveries ($F_4$: Qualifiers, Eliminators, and Finals).
 
@@ -119,7 +119,7 @@ These five bowlers achieve non-dominated Pareto efficiency in exactly one cohort
     - **Jasprit Bumrah:** Lower containment ($1.0027 < 1.1015$) AND faster strike rate ($15.36 < 15.73$).
 - **Selection Trade-Off & Transparent Justification:**
   - Santner is selected as the 10th bowler solely because of his qualified $C15$ exposure ($241$ balls) and excellent raw containment ($1.0336$).
-  - However, team leadership must understand the analytical trade-off: **Santner does not add new Pareto value to the roster**. Every dimension of his performance is surpassed by Varun Chakravarthy. He provides tactical left-arm spin depth, but he cannot be justified as an optimal multi-dimensional anchor.
+  - However, team leadership must understand the analytical trade-off: **Santner does not add new Pareto value to the shortlist**. Every dimension of his performance is surpassed by Varun Chakravarthy. He provides tactical left-arm spin depth, but he cannot be justified as an optimal multi-dimensional anchor.
 
 ---
 
