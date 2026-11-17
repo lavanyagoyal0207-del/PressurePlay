@@ -1,0 +1,47 @@
+{
+  "audit_metadata": {
+    "task": "Final Reproducibility and Selection-Readiness Audit",
+    "scope": "IPL Seasons 2022-2026",
+    "played_matches": 367,
+    "total_deliveries": 87687,
+    "execution_mode": "Strictly Read-Only",
+    "output_directory": "C:\\Users\\Lavanya Goyal\\OneDrive\\Documents\\rr\\outputs\\bowler_pressure_reanalysis\\final_validation"
+  },
+  "gamma_poisson_reproduction": {
+    "c15_mle_alpha": 43.369640386095085,
+    "c15_mle_beta": 687.4072607077317,
+    "c15_prior_mean_sr": 15.849964504850357,
+    "c15_prior_cv": 0.15184730536473592,
+    "c15_log_likelihood": -455.0396278492268,
+    "c15_gradient_norm": 0.0010765057635700194,
+    "c21_chi2_dispersion_ratio": 0.802,
+    "c21_upper_p_value": 0.9451,
+    "c21_lower_p_value": 0.0549,
+    "c21_verdict": "Underdispersed / Equidispersed (Pure Poisson)"
+  },
+  "containment_model_reproduction": {
+    "c21_between_bowler_tau2": 0.020663541245917072,
+    "c15_between_bowler_tau2": 0.01650565003317346,
+    "sampling_variance_formula": "s_i^2 = Var(e_ij) / n_i",
+    "shrinkage_target": "Phase-adjusted residual per clean ball (prior mean = 0.0)"
+  },
+  "player_identity_resolution": {
+    "harshal_patel_canonical_id": 2261,
+    "id_6299_status": "Spurious reporting typographical error (0 occurrences in DB)",
+    "abdul_samad_status": "Distinct Indian (7446) and Pakistani (6922) players",
+    "haider_ali_status": "Distinct Pakistani (7338) and UAE (28756) players"
+  },
+  "bootstrap_audit": {
+    "iterations": 1000,
+    "resampling_unit": "Match-cluster with replacement",
+    "sunil_narine_death_frontier_freq": 0.738,
+    "obed_mccoy_qualifying_iterations": 544,
+    "obed_mccoy_explanation": "Played only 7 death matches; omitted in 45.6% of match resamples"
+  },
+  "selection_readiness": {
+    "required_bowlers": 10,
+    "selection_procedure_status": "Validated (Segmented Death vs Tournament Pressure)",
+    "readiness_verdict": "Approved with Caveats",
+    "caveat_summary": "Top 10 must not be frozen until official team weighting function between containment and strike rate is formally approved"
+  }
+}
