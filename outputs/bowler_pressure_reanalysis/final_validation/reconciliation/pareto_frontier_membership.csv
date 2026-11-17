@@ -1,0 +1,11 @@
+player_name,player_id,selection_category,c21_death_qualified,c21_death_frontier_member,c21_legal_balls,c21_matches,c21_shrunk_containment,c21_posterior_median_sr,c21_dominated_by,c15_f1_f4_qualified,c15_f1_f4_frontier_member,c15_legal_balls,c15_matches,c15_shrunk_containment,c15_posterior_median_sr,c15_dominated_by
+Sunil Narine,781,Dual-Cohort Pareto Frontier Anchor,True,True,216,35,1.2326,12.55,None (Pareto-Efficient),True,True,798,39,0.9359,18.33,None (Pareto-Efficient)
+Jasprit Bumrah,2933,Dual-Cohort Pareto Frontier Anchor,True,True,393,44,1.2311,12.57,None (Pareto-Efficient),True,True,542,32,1.0027,15.36,None (Pareto-Efficient)
+Matheesha Pathirana,8661,Dual-Cohort Pareto Frontier Anchor,True,True,402,32,1.4455,11.44,None (Pareto-Efficient),True,True,468,21,1.1293,14.44,None (Pareto-Efficient)
+Mitchell Starc,829,Dual-Cohort Pareto Frontier Anchor,True,True,155,22,1.6518,9.29,None (Pareto-Efficient),True,True,233,21,1.3475,12.1,None (Pareto-Efficient)
+Yuzvendra Chahal,1612,C21 Death Overs Pareto Frontier Anchor,True,True,336,48,1.6044,10.14,None (Pareto-Efficient),True,False,963,43,1.2517,15.42,"Bhuvneshwar Kumar, Josh Hazlewood, Harshal Patel"
+Harshal Patel,2261,C21 Death Overs Pareto Frontier Anchor,True,True,498,51,1.5263,10.56,None (Pareto-Efficient),True,False,693,33,1.2043,13.8,"Josh Hazlewood, Kagiso Rabada"
+Varun Chakravarthy,6256,C15 F1 U F4 Pareto Frontier Anchor,True,False,226,35,1.591,14.28,"Bhuvneshwar Kumar, Sunil Narine, Harshal Patel",True,True,758,36,1.0714,14.45,None (Pareto-Efficient)
+Josh Hazlewood,830,C15 F1 U F4 Pareto Frontier Anchor,True,False,275,32,1.6494,12.46,"Yuzvendra Chahal, Harshal Patel, Mohit Sharma",True,True,497,29,1.1835,13.61,None (Pareto-Efficient)
+Kagiso Rabada,3628,C15 F1 U F4 Pareto Frontier Anchor,True,False,258,38,1.6413,12.65,"Sunil Narine, Yuzvendra Chahal, Harshal Patel",True,True,395,27,1.2029,13.19,None (Pareto-Efficient)
+Mitchell Santner,4101,Non-Frontier Qualified Selection (Interior Point),False,False,39,8,,,Not Qualified (Legal 39 < 100; Matches 8 < 10),True,False,241,15,1.1015,15.73,"Jasprit Bumrah, Varun Chakravarthy"

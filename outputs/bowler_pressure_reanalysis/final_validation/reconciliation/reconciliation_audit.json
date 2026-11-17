@@ -1,0 +1,41 @@
+{
+  "audit_metadata": {
+    "task": "Final Bowler Audit Numerical Corrections & Roster Finalization",
+    "repository": "C:\\Users\\Lavanya Goyal\\OneDrive\\Documents\\rr",
+    "status": "FINALIZED - STRICTLY AUDITED",
+    "scope": "IPL Seasons 2022-2026 (367 Played Matches, 87,687 Deliveries)",
+    "date": "2026-11-18"
+  },
+  "cohort_definitions": {
+    "C15": "F1 early-wicket collapse union F4 playoff/knockout matches (overs 0-19)",
+    "C21": "Death overs (overs 16-20 across all match situations)"
+  },
+  "pareto_frontier_membership": {
+    "dual_cohort_frontier_anchors_count": 4,
+    "dual_cohort_frontier_anchors": [
+      "Sunil Narine",
+      "Jasprit Bumrah",
+      "Matheesha Pathirana",
+      "Mitchell Starc"
+    ],
+    "c21_death_specific_frontier_anchors": [
+      "Yuzvendra Chahal",
+      "Harshal Patel"
+    ],
+    "c15_f1_f4_specific_frontier_anchors": [
+      "Varun Chakravarthy",
+      "Josh Hazlewood",
+      "Kagiso Rabada"
+    ],
+    "total_unique_pareto_frontier_bowlers": 9,
+    "tenth_bowler_status": "Mitchell Santner is a C15-qualified, non-frontier interior selection (dominated by Varun and Bumrah in C15; disqualified in C21 due to 39 balls < 100 balls)"
+  },
+  "homogeneous_prior_resolution": {
+    "verdict": "Corrected. Under alpha, beta -> inf, all bowlers have identical rate (0.07429 wkts/ball, SR = 13.46). Ranks removed and marked Tied/Undifferentiated.",
+    "sensitivity_stability": "Starc #1, Chahal #2, Harshal #3-#5 across weak, benchmark, and strong priors."
+  },
+  "frozen_baseline_hash_verification": {
+    "verified_file_count": 8,
+    "all_hashes_match": true
+  }
+}

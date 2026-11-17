@@ -1,0 +1,23 @@
+player_name,player_id,tactical_role,cohort,legal_balls,clean_balls,match_count,credited_wickets,raw_containment_rate,phase_adjusted_residual_per_ball,shrunk_containment_rate,posterior_wicket_rate,posterior_median_strike_rate,pass_legal_balls_ge_100,pass_matches_ge_10,pass_dual_exposure_rule,qualification_status,failure_reason
+Sunil Narine,781,Death Overs Specialist,C21_Death_All,216,213,35,19,1.0047,-0.6908,1.2326,0.08038,12.55,True,True,True,QUALIFIED,None
+Jasprit Bumrah,2933,Death Overs Specialist,C21_Death_All,393,385,44,33,1.2078,-0.6091,1.2311,0.08004,12.57,True,True,True,QUALIFIED,None
+Yuzvendra Chahal,1612,Death Overs Specialist (Reconciled from ID 1612; ID 2876 was Axar Patel),C21_Death_All,336,332,48,40,1.5873,-0.1652,1.6044,0.09914,10.14,True,True,True,QUALIFIED,None
+Matheesha Pathirana,8661,Death Overs Specialist,C21_Death_All,402,383,32,39,1.4595,-0.3711,1.4455,0.0879,11.44,True,True,True,QUALIFIED,None
+Harshal Patel,2261,Death Overs Specialist,C21_Death_All,498,483,51,53,1.5921,-0.2509,1.5263,0.09515,10.56,True,True,True,QUALIFIED,None
+Varun Chakravarthy,6256,Tournament Pressure Enforcer,C21_Death_All,226,221,35,15,1.5113,-0.2293,1.591,0.07068,14.28,True,True,True,QUALIFIED,None
+Mitchell Starc,829,Tournament Pressure Enforcer,C21_Death_All,155,152,22,26,1.7237,-0.1387,1.6518,0.10844,9.29,True,True,True,QUALIFIED,None
+Kagiso Rabada,3628,Tournament Pressure Enforcer,C21_Death_All,258,251,38,22,1.6534,-0.1257,1.6413,0.07967,12.65,True,True,True,QUALIFIED,None
+Mitchell Santner,4101,Tournament Pressure Enforcer,C21_Death_All,39,38,8,4,1.7105,-0.0437,1.7049,0.07787,13.02,False,False,False,FAILED_EXPOSURE,Legal balls 39 < 100; Matches 8 < 10
+Josh Hazlewood,830,Tournament Pressure Enforcer,C21_Death_All,275,269,32,24,1.7026,-0.1052,1.6494,0.08085,12.46,True,True,True,QUALIFIED,None
+Axar Patel,2876,Erroneously Labeled as Chahal in Turn 2884,C21_Death_All,72,71,12,1,1.3521,-0.3182,1.6059,0.06155,16.51,False,True,False,FAILED_EXPOSURE,Legal balls 72 < 100
+Sunil Narine,781,Death Overs Specialist,C15_F1_F4_Union,798,782,39,38,0.9757,-0.5581,0.9359,0.05478,18.33,True,True,True,QUALIFIED,None
+Jasprit Bumrah,2933,Death Overs Specialist,C15_F1_F4_Union,542,533,32,37,1.1182,-0.5311,1.0027,0.06537,15.36,True,True,True,QUALIFIED,None
+Yuzvendra Chahal,1612,Death Overs Specialist (Reconciled from ID 1612; ID 2876 was Axar Patel),C15_F1_F4_Union,963,951,43,64,1.3565,-0.2042,1.2517,0.06506,15.42,True,True,True,QUALIFIED,None
+Matheesha Pathirana,8661,Death Overs Specialist,C15_F1_F4_Union,468,454,21,37,1.2952,-0.4017,1.1293,0.06956,14.44,True,True,True,QUALIFIED,None
+Harshal Patel,2261,Death Overs Specialist,C15_F1_F4_Union,693,679,33,57,1.3947,-0.2745,1.2043,0.07271,13.8,True,True,True,QUALIFIED,None
+Varun Chakravarthy,6256,Tournament Pressure Enforcer,C15_F1_F4_Union,758,747,36,57,1.1526,-0.4279,1.0714,0.06944,14.45,True,True,True,QUALIFIED,None
+Mitchell Starc,829,Tournament Pressure Enforcer,C15_F1_F4_Union,233,230,21,33,1.5217,-0.1556,1.3475,0.08297,12.1,True,True,True,QUALIFIED,None
+Kagiso Rabada,3628,Tournament Pressure Enforcer,C15_F1_F4_Union,395,386,27,39,1.3368,-0.3408,1.2029,0.0761,13.19,True,True,True,QUALIFIED,None
+Mitchell Santner,4101,Tournament Pressure Enforcer,C15_F1_F4_Union,241,238,15,16,1.0336,-0.4899,1.1015,0.06395,15.73,True,True,True,QUALIFIED,None
+Josh Hazlewood,830,Tournament Pressure Enforcer,C15_F1_F4_Union,497,488,29,44,1.3463,-0.336,1.1835,0.07377,13.61,True,True,True,QUALIFIED,None
+Axar Patel,2876,Erroneously Labeled as Chahal in Turn 2884,C15_F1_F4_Union,663,657,37,27,1.1674,-0.3712,1.1176,0.05211,19.28,True,True,True,QUALIFIED,None
